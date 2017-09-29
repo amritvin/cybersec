@@ -1,0 +1,41 @@
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :1
+Enter Second number :2
+
+gcd(1,2)= 1
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :9
+Enter Second number :3
+
+gcd(9,3)= 3
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :27
+Enter Second number :78
+
+gcd(27,78)= 3
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :0
+Enter Second number :0
+gcd= 0
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :198
+Enter Second number :28
+
+gcd(198,28)= 2
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :225
+Enter Second number :198
+
+gcd(225,198)= 9
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :192
+Enter Second number :252
+
+gcd(192,252)= 12
+amrit@mypc:~/maths$ python P2CSN17003Third.py 
+Enter first  number :198
+Enter Second number :252
+
+gcd(198,252)= 18
+amrit@mypc:~/maths$ 
+

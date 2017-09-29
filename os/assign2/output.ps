@@ -1,0 +1,1063 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 18 36 577 806
+%%Title: Enscript Output
+%%Creator: GNU Enscript 1.6.5.90
+%%CreationDate: Sat Sep 23 22:12:37 2017
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6.5 90
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6.5 90
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 10 10 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [595 842] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-simple 1.6.5 90
+
+/do_header {	% print default simple header
+  gsave
+    d_header_x d_header_y HFpt_h 3 div add translate
+
+    HF setfont
+    user_header_p {
+      5 0 moveto user_header_left_str show
+
+      d_header_w user_header_center_str stringwidth pop sub 2 div
+      0 moveto user_header_center_str show
+
+      d_header_w user_header_right_str stringwidth pop sub 5 sub
+      0 moveto user_header_right_str show
+    } {
+      5 0 moveto fname show
+      45 0 rmoveto fmodstr show
+      45 0 rmoveto pagenumstr show
+    } ifelse
+
+  grestore
+} def
+%%EndResource
+/d_page_w 559 def
+/d_page_h 770 def
+/d_header_x 0 def
+/d_header_y 755 def
+/d_header_w 559 def
+/d_header_h 15 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 559 def
+/d_footer_h 0 def
+/d_output_w 559 def
+/d_output_h 755 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+18 36 translate
+/pagenum 1 def
+/fname (output) def
+/fdir (.) def
+/ftail (output) def
+% User defined strings:
+/fmodstr (Sat Sep 23 22:07:30 2017) def
+/pagenumstr (1) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 742 M
+(1.) s
+5 731 M
+(They are part of the environment in which a process runs.) s
+5 720 M
+(Its variable is a dynamic-named value that can affect the way running processes will behave) s
+5 709 M
+( on a computer.) s
+5 698 M
+(Environment variables hold values related to the current environment, like the Operating Sy) s
+5 687 M
+(stem or user sessions.) s
+5 665 M
+(a\)) s
+5 654 M
+(#include <stdio.h>) s
+5 643 M
+(#include <stdlib.h>) s
+5 621 M
+(int main \(\)) s
+5 610 M
+({) s
+5 599 M
+( ) s
+5 588 M
+(   printf\("USER : %s\\n",getenv\("USER"\)\);) s
+5 577 M
+(   printf\("HOME : %s\\n", getenv\("HOME"\)\);) s
+5 566 M
+(   printf\("PWD : %s\\n",getenv\("PWD"\)\);) s
+5 555 M
+(   printf\("PATH : %s\\n", getenv\("PATH"\)\);) s
+5 511 M
+(   return\(0\);) s
+5 500 M
+(}) s
+5 489 M
+(OUTPUT:) s
+5 478 M
+(USER : amrit) s
+5 467 M
+(HOME : /home/amrit) s
+5 456 M
+(PWD : /home/amrit/os/assign2) s
+5 445 M
+(PATH : /home/amrit/bin:/home/amrit/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr) s
+5 434 M
+(/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin) s
+5 412 M
+(b\)) s
+5 401 M
+(#include <stdio.h>) s
+5 390 M
+(#include <stdlib.h>) s
+5 368 M
+(int main \(\)) s
+5 357 M
+({) s
+5 346 M
+(   setenv\("ROOT","root",1\);) s
+5 335 M
+(   printf\("ROOT: %s\\n", getenv\("ROOT"\)\);) s
+5 291 M
+(   return\(0\);) s
+5 280 M
+(}) s
+5 258 M
+(OUTPUT:     ) s
+5 247 M
+(        ROOT: root) s
+5 225 M
+(2\)) s
+5 214 M
+(#include<stdio.h>) s
+5 203 M
+(#include<pthread.h>) s
+5 192 M
+(void* phello\(\)) s
+5 181 M
+({) s
+5 170 M
+(        printf\("HELLO WORLD"\);) s
+5 159 M
+(        ) s
+5 148 M
+(}) s
+5 115 M
+(int main\(\)) s
+5 104 M
+({) s
+5 93 M
+(        pthread_t t1;) s
+5 82 M
+(        pthread_create\(&t1,NULL,phello,NULL\);) s
+5 71 M
+(        pthread_join\(t1,NULL\);) s
+5 60 M
+(}) s
+5 49 M
+(OUTPUT:) s
+5 38 M
+(HELLO WORLD) s
+5 16 M
+(b\)) s
+5 5 M
+(#include<stdio.h>) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+18 36 translate
+/pagenum 2 def
+/fname (output) def
+/fdir (.) def
+/ftail (output) def
+% User defined strings:
+/fmodstr (Sat Sep 23 22:07:30 2017) def
+/pagenumstr (2) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 742 M
+(#include<stdlib.h>) s
+5 731 M
+(#include<pthread.h>) s
+5 720 M
+(int a,b,wait=0;) s
+5 709 M
+(pthread_mutex_t mutex;) s
+5 698 M
+(pthread_cond_t cv;) s
+5 676 M
+(void * printa\(\)) s
+5 665 M
+({) s
+5 654 M
+(                //Critical Section) s
+5 643 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 632 M
+(        if \(b!=0\)       ) s
+5 621 M
+(        {       wait++;) s
+5 610 M
+(                pthread_cond_wait\(&cv,&mutex\);) s
+5 599 M
+(        }) s
+5 588 M
+(        printf\("a: %d\\n",a\);) s
+5 577 M
+(        pthread_mutex_unlock\(&mutex\);) s
+5 555 M
+(}) s
+5 544 M
+(int main\(\)) s
+5 533 M
+({) s
+5 522 M
+(        pthread_mutex_init\(&mutex, NULL\);       ) s
+5 511 M
+(        pthread_cond_init\(&cv, NULL\);) s
+5 500 M
+(        pthread_t t1;) s
+5 489 M
+(        pthread_create\(&t1,NULL,printa,NULL\);) s
+5 478 M
+(                //Critical section) s
+5 467 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 456 M
+(        printf\("ENTER THE VALUE: "\);) s
+5 445 M
+(        scanf\("%d",&a\);) s
+5 434 M
+(        b=0;) s
+5 423 M
+(        if \(wait!=0\)) s
+5 412 M
+(                pthread_cond_signal\(&cv\);) s
+5 401 M
+(        pthread_mutex_unlock\(&mutex\);   ) s
+5 390 M
+(        pthread_join\(t1,NULL\);) s
+5 368 M
+(        ) s
+5 357 M
+(}) s
+5 346 M
+(OUTPUT:) s
+5 335 M
+(ENTER THE VALUE: 5) s
+5 324 M
+(a: 5) s
+5 291 M
+(3\)) s
+5 280 M
+(OUTPUT:) s
+5 269 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 258 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 247 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 236 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 225 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 214 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 203 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 192 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 181 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 170 M
+(0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) s
+5 159 M
+(000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000x) s
+5 148 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 137 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 126 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 115 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 104 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 93 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 82 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 71 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 60 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 49 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 38 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 16 M
+(This program would exicute either the print_os or the thread function print_xs, Sice the co) s
+5 5 M
+(de uses mutual exclsion principle they wont work alternatively in between.) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+18 36 translate
+/pagenum 3 def
+/fname (output) def
+/fdir (.) def
+/ftail (output) def
+% User defined strings:
+/fmodstr (Sat Sep 23 22:07:30 2017) def
+/pagenumstr (3) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 742 M
+(This code will print 1000 'o' followed by that much of 'x' mostly, wiseversa can also rarel) s
+5 731 M
+(y happen, if the new thread was in the first exicution.) s
+5 709 M
+(b\)) s
+5 687 M
+(#include <stdio.h>) s
+5 676 M
+(#include <pthread.h>) s
+5 665 M
+(static void print_os\(\);) s
+5 654 M
+(pthread_mutex_t mutex;) s
+5 643 M
+(int wait=0;) s
+5 632 M
+(pthread_cond_t cond;) s
+5 621 M
+(void* print_xs\(void* unused\) {) s
+5 610 M
+(        int j;) s
+5 599 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 588 M
+(        for\(j = 0; j < 1000; j++\)) s
+5 577 M
+(        fputc\('x', stderr\);) s
+5 566 M
+(        wait++;) s
+5 555 M
+(        pthread_cond_signal\(&cond\);) s
+5 544 M
+(        pthread_mutex_unlock\(&mutex\);) s
+5 533 M
+(        return NULL;) s
+5 522 M
+(}) s
+5 511 M
+(static void print_os\(\) {) s
+5 500 M
+(        int i;) s
+5 489 M
+(        for\(i = 0; i < 1000; i++\)) s
+5 478 M
+(        fputc\('o', stderr\);) s
+5 467 M
+(}) s
+5 456 M
+(int main\(\) {) s
+5 445 M
+(        pthread_mutex_init\(&mutex, NULL\);) s
+5 434 M
+(        pthread_cond_init\(&cond, NULL\);) s
+5 412 M
+(        pthread_t new;) s
+5 401 M
+(        pthread_create\(&new, NULL, &print_xs, NULL\);) s
+5 390 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 379 M
+(        if \(wait<=0\)) s
+5 368 M
+(                pthread_cond_wait\(&cond,&mutex\);) s
+5 357 M
+(        print_os\(\);) s
+5 346 M
+(        pthread_mutex_unlock\(&mutex\);) s
+5 335 M
+(        pthread_join\(new, NULL\);) s
+5 324 M
+(        return 0;) s
+5 313 M
+(}) s
+5 291 M
+(OUTPUT:) s
+5 280 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 269 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 258 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 247 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 236 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 225 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 214 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 203 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 192 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 181 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) s
+5 170 M
+(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo) s
+5 159 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 148 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 137 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 126 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 115 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 104 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 93 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 82 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 71 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 60 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 49 M
+(ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo) s
+5 27 M
+(4\)) s
+5 5 M
+(#include<stdio.h>) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+18 36 translate
+/pagenum 4 def
+/fname (output) def
+/fdir (.) def
+/ftail (output) def
+% User defined strings:
+/fmodstr (Sat Sep 23 22:07:30 2017) def
+/pagenumstr (4) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 742 M
+(#include<stdlib.h>) s
+5 731 M
+(#include<pthread.h>) s
+5 720 M
+(int wait=0;) s
+5 709 M
+(pthread_mutex_t mutex;) s
+5 698 M
+(pthread_cond_t cv;) s
+5 687 M
+(signed long long int buf;) s
+5 676 M
+(int wa=-1,wb=-1;) s
+5 654 M
+(void * printa\(\)) s
+5 643 M
+({//Critical Section) s
+5 632 M
+(        signed long long int a,b;) s
+5 621 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 610 M
+(        if \(wait==0\)) s
+5 599 M
+(        {) s
+5 588 M
+(                wait=2;) s
+5 577 M
+(                pthread_cond_wait\(&cv,&mutex\);) s
+5 555 M
+(        }) s
+5 544 M
+(        printf\("a recieved: %lli \\n",buf\);) s
+5 533 M
+(        if\(wa==0\)) s
+5 522 M
+(        {) s
+5 511 M
+(                a=buf;) s
+5 500 M
+(                buf=0;) s
+5 489 M
+(                pthread_cond_signal\(&cv\);) s
+5 478 M
+(                wb=0;}) s
+5 467 M
+(        if\(wb==0\)) s
+5 456 M
+(        {pthread_cond_wait\(&cv,&mutex\);) s
+5 445 M
+(                printf\("b recieved: %lli \\n",buf\);) s
+5 434 M
+(                b=buf;) s
+5 423 M
+(                buf=0;) s
+5 412 M
+(        }) s
+5 401 M
+(        buf=a*b;) s
+5 390 M
+(        printf\("buf:%lli\\n",buf \);) s
+5 379 M
+(        printf\("a:%lli,b:%lli\\n",a,b\);) s
+5 368 M
+(        pthread_cond_signal\(&cv\);) s
+5 357 M
+(        pthread_mutex_unlock\(&mutex\);) s
+5 335 M
+(}) s
+5 324 M
+(int main\(\)) s
+5 313 M
+({ signed  long long int k[2];) s
+5 302 M
+(        pthread_mutex_init\(&mutex, NULL\);) s
+5 291 M
+(        pthread_cond_init\(&cv, NULL\);) s
+5 280 M
+(        pthread_t t1;) s
+5 269 M
+(        pthread_create\(&t1,NULL,printa,NULL\);) s
+5 247 M
+(                //Critical section) s
+5 236 M
+(        pthread_mutex_lock\(&mutex\);) s
+5 225 M
+(        printf\("ENTER THE Ist VALUE: "\);) s
+5 214 M
+(        scanf\("%lli",&k[0]\);) s
+5 203 M
+(        buf=k[0];) s
+5 192 M
+(        wa++;) s
+5 181 M
+(        wait++;) s
+5 170 M
+(        if \(wait==2\)) s
+5 159 M
+(        {) s
+5 148 M
+(                pthread_cond_signal\(&cv\);) s
+5 137 M
+(        }) s
+5 126 M
+(        if \(wb!=0\)) s
+5 115 M
+(        {) s
+5 104 M
+(                pthread_cond_wait\(&cv,&mutex\);) s
+5 93 M
+(        }) s
+5 82 M
+(        printf\("ENTER THE  II nd VALUE: "\);) s
+5 71 M
+(        scanf\("%lli",&k[1]\);) s
+5 60 M
+(        buf=k[1];) s
+5 38 M
+(        wb++;) s
+5 27 M
+(        if\(wb==1\)) s
+5 16 M
+(        {) s
+5 5 M
+(                pthread_cond_signal\(&cv\);) s
+_R
+S
+%%Page: (5) 5
+%%BeginPageSetup
+_S
+18 36 translate
+/pagenum 5 def
+/fname (output) def
+/fdir (.) def
+/ftail (output) def
+% User defined strings:
+/fmodstr (Sat Sep 23 22:07:30 2017) def
+/pagenumstr (5) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+5 742 M
+(        }) s
+5 731 M
+(        if \(buf==k[1]\)) s
+5 720 M
+(                pthread_cond_wait\(&cv,&mutex\);) s
+5 698 M
+(        pthread_mutex_unlock\(&mutex\);) s
+5 687 M
+(        printf\("mul: %lli ", buf\);) s
+5 676 M
+(        pthread_join\(t1,NULL\);) s
+5 654 M
+(}) s
+5 632 M
+(OUTPUT:) s
+5 621 M
+(ENTER THE Ist VALUE: 2) s
+5 610 M
+(a recieved: 2 ) s
+5 599 M
+(ENTER THE  II nd VALUE: 3) s
+5 588 M
+(b recieved: 3 ) s
+5 577 M
+(buf:6) s
+5 566 M
+(a:2,b:3) s
+5 555 M
+(mul: 6 ) s
+5 533 M
+(amrit@mypc:~/os$ ./a.out ) s
+5 522 M
+(ENTER THE Ist VALUE: 55556) s
+5 511 M
+(a recieved: 55556 ) s
+5 500 M
+(ENTER THE  II nd VALUE: 2235) s
+5 489 M
+(b recieved: 2235 ) s
+5 478 M
+(buf:124167660) s
+5 467 M
+(a:55556,b:2235) s
+5 456 M
+(mul: 124167660) s
+_R
+S
+%%Trailer
+%%Pages: 5
+%%DocumentNeededResources: font Courier-Bold Courier 
+%%EOF

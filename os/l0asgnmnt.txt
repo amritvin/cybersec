@@ -1,0 +1,10 @@
+Script started on Wednesday 26 July 2017 10:48:56 AM IST
+]0;amrit@amrit-HP-COMPAQ-6300-PRO-B: ~/os[01;32mamrit@amrit-HP-COMPAQ-6300-PRO-B[00m:[01;34m~/os[00m$ bash
+]0;amrit@amrit-HP-COMPAQ-6300-PRO-B: ~/os[01;32mamrit@amrit-HP-COMPAQ-6300-PRO-B[00m:[01;34m~/os[00m$ exit
+exit
+]0;amrit@amrit-HP-COMPAQ-6300-PRO-B: ~/os[01;32mamrit@amrit-HP-COMPAQ-6300-PRO-B[00m:[01;34m~/os[00m$ cat script[K[K[K[K[K[Kl0ass[Kgnmnt
+cat: l0asgnmnt: No such file or directory
+]0;amrit@amrit-HP-COMPAQ-6300-PRO-B: ~/os[01;32mamrit@amrit-HP-COMPAQ-6300-PRO-B[00m:[01;34m~/os[00m$ cat l0asgnmnt.txt
+]0;amrit@amrit-HP-COMPAQ-6300-PRO-B: ~/os[01;32mamrit@amrit-HP-COMPAQ-6300-PRO-B[00m:[01;34m~/os[00m$ exit
+
+Script done on Wednesday 26 July 2017 11:03:44 AM IST

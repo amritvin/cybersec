@@ -1,0 +1,304 @@
+Script started on Thursday 10 August 2017 10:16:47 PM IST
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ python vow.py wub[C[C[C[Cls[Kcd mypy/script gdbsess.txtclear[Kat Dilraj_CLT ls[Kwget https://www.smule.com/Dilraj_CLT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kgdb ./P0[4Pmakegdb ./P0[4Pmake
+make: 'P0' is up to date.
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ makepython vow.py wub[C[C[C[Cvow[C[C[C[Cmake[K[Kmakepython vow.py wub[C[C[C[Cls[Kcd mypy/script gdbsess.txtclear[Kat Dilraj_CLT ls[Kwget https://www.smule.com/Dilraj_CLT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kgdb ./P0[4Pmake[2Plsmakegdb ./P0
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./P0...done.
+(gdb) break doMakeDisk
+Breakpoint 1 at 0x402de4: file shell.C, line 93.
+(gdb) break SimDisk::SimDisk
+Breakpoint 2 at 0x400e9b: file simDisk.C, line 22.
+(gdb) r
+Starting program: /home/amrit/os/P0/P0 
+The shell has only the following cmds:
+	quit	
+	mkdisk	
+	fddisk	
+	rddisk	u
+	wrdisk	us
+	echo	ssss
+	mkfs	uu
+	findfs	
+	inode	u
+	q	
+Start with ! to invoke a Unix shell cmd
+sh350% mkdisk
+cmd [mkdisk]
+
+Breakpoint 1, doMakeDisk (a=0x618440) at shell.C:93
+93	  printf("\n*****AMR MODULE******\n");
+(gdb) n
+
+*****AMR MODULE******
+94	  uint r = mkSimDisk();
+(gdb) print a[]0][C.s
+$1 = 0x0
+(gdb) print a[0].s[C[Ku
+$2 = 0
+(gdb) print a[0].u[K[K[K[K[K
+$3 = (Arg *) 0x618440
+(gdb) s
+mkSimDisk () at shell.C:72
+72	{
+(gdb) n
+73	  char name[1024] = "";
+(gdb) n
+74	  uint nblocks = 0, nbytes = 0;
+(gdb) n
+76	  FILE *f = fopen("diskParams.dat", "r");
+(gdb) n
+77	  if (f == 0)
+(gdb) n
+79	  fscanf(f, "%s %u %u\n", name, &nblocks, &nbytes);
+(gdb) n
+80	  fclose(f);
+(gdb) n
+82	  releaseSimDisk();
+(gdb) n
+83	  simDisk = new SimDisk(name, nblocks, nbytes);
+(gdb) prin name
+Ambiguous command "prin name": print, print-object, printf.
+(gdb) n
+
+Breakpoint 2, SimDisk::SimDisk (this=0x618460, name=0x7fffffffd5e0 "D1", 
+    iSectorsPerDisk=124, iBytesPerSector=512) at simDisk.C:22
+22	SimDisk::SimDisk(const char *name, uint iSectorsPerDisk, uint iBytesPerSector)
+(gdb) nprin name
+Ambiguous command "prin name": print, print-object, printf.
+(gdb) n
+24	  if (name == 0 || *name == 0)
+(gdb) n
+26	  strncpy(labelOfTheDisk, name, LabelSZ);
+(gdb) n
+27	  nSectorsPerDisk = iSectorsPerDisk;
+(gdb) print lable[K[K[K[K[KlabelOfTheDisk
+$4 = "D1", '\000' <repeats 13 times>
+(gdb) n
+28	  nBytesPerSector = iBytesPerSector;
+(gdb) n
+29	  if (paramsOK() == 0)
+(gdb) n
+32	  int exists = 0, fd = openDiskImage(O_RDONLY);	// Does it already exist?
+(gdb) n
+33	  if (fd > 0) {
+(gdb) n
+35	    fstat(fd, &statBuf);
+(gdb) n
+36	    close(fd);
+(gdb) n
+37	    exists = (uint) statBuf.st_size == nSectorsPerDisk * nBytesPerSector;
+(gdb) n
+39	  if (exists == 0)
+(gdb) n
+41	}
+(gdb) n
+mkSimDisk () at shell.C:85
+85		 (ulong) simDisk, name, nblocks, nbytes);
+(gdb) prin [Kt simDisk
+$5 = (SimDisk *) 0x618460
+(gdb) n
+84	  printf("simDisk %lx = new SimDisk(%s, %d, %d)\n",
+(gdb) nprint simDisk
+$6 = (SimDisk *) 0x618460
+(gdb) print name
+$7 = "D1", '\000' <repeats 1021 times>
+(gdb) n
+85		 (ulong) simDisk, name, nblocks, nbytes);
+(gdb) n
+simDisk 618460 = new SimDisk(D1, 124, 512)
+86	  return (ulong) simDisk;
+(gdb) n
+87	}
+(gdb) n
+doMakeDisk (a=0x618440) at shell.C:95
+95	  if (r != 0)
+(gdb) n
+96	    releaseCfv();
+(gdb) n
+97	  printf("mkSimDisk() == %d\n", r);
+(gdb) n
+mkSimDisk() == 6390880
+98	}
+(gdb) n
+invokeCmd (k=1) at shell.C:234
+234	  delete arg;
+(gdb) n
+235	}
+(gdb) n
+main () at shell.C:264
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% wrdisk 3 SO  os  Operat      Love Os       compue==ter           iloveos       iloveos     ikeos
+cmd [wrdisk 3 ilikeos]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) n
+274	      char *p = strtok(buf, " \t");
+(gdb) n
+275	      int k = findCmd(p);
+(gdb) n
+276	      if (k >= 0)
+(gdb) n
+277		invokeCmd(k);
+(gdb) n
+toNum 3toNum 3arg 3 3 3
+AMR MODULE IIwrite4350disk(3, ilikeos...) == 512
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% n
+cmd [n]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) n
+274	      char *p = strtok(buf, " \t");
+(gdb) n
+275	      int k = findCmd(p);
+(gdb) n
+276	      if (k >= 0)
+(gdb) n
+279		usage();
+(gdb) n
+The shell has only the following cmds:
+	quit	
+	mkdisk	
+	fddisk	
+	rddisk	u
+	wrdisk	us
+	echo	ssss
+	mkfs	uu
+	findfs	
+	inode	u
+	q	
+Start with ! to invoke a Unix shell cmd
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% rddisk 3
+cmd [rddisk 3]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) n
+274	      char *p = strtok(buf, " \t");
+(gdb) n
+275	      int k = findCmd(p);
+(gdb) n
+276	      if (k >= 0)
+(gdb) n
+277		invokeCmd(k);
+(gdb) n
+toNum 3toNum 3arg 3 3 3
+read4350disk(3, ilikeosili...) == 512
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% q
+cmd [q]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) n
+274	      char *p = strtok(buf, " \t");
+(gdb) n
+275	      int k = findCmd(p);
+(gdb) n
+276	      if (k >= 0)
+(gdb) n
+277		invokeCmd(k);
+(gdb) n
+[Inferior 1 (process 21151) exited normally]
+(gdb) q
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ exit
+
+Script done on Thursday 10 August 2017 10:23:10 PM IST
+ n
+276	      if (k >= 0)
+(gdb) n
+277		invokeCmd(k);
+(gdb) n
+toNum 3toNum 3arg 3 3 3
+AMR MODULE IIwrite4350disk(3, ilikeos...) == 512
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% n
+cmd [n]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] == '!')		// begins with !, execute it as
+(gdb) n
+274	      char *p = strtok(buf, " \t");
+(gdb) n
+275	      int k = findCmd(p);
+(gdb) n
+276	      if (k >= 0)
+(gdb) n
+279		usage();
+(gdb) n
+The shell has only the following cmds:
+	quit	
+	mkdisk	
+	fddisk	
+	rddisk	u
+	wrdisk	us
+	echo	ssss
+	mkfs	uu
+	findfs	
+	inode	u
+	q	
+Start with ! to invoke a Unix shell cmd
+264	    *buf = 0;			// clear old input
+(gdb) n
+265	    printf("%s", "sh350% ");	// prompt
+(gdb) n
+266	    ourgets(buf, 1023);
+(gdb) n
+sh350% rddisk 3
+cmd [rddisk 3]
+267	    if (buf[0] == 0)
+(gdb) n
+269	    if (buf[0] == '#')
+(gdb) n
+271	    if (buf[0] ==

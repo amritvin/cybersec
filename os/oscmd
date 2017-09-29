@@ -1,0 +1,113 @@
+1.bash
+2.bg
+  fg
+  python hello.py 
+  bg &1
+3.cat hello.py
+  cat hello.py world.py
+  cat world.py >> hello.py
+  cat hello.py > world.py
+4.chmod 746 hello.py
+  ls -l hello.py
+  chmod u=rw hello.py
+  ls -l hello.py
+  chmod u-x hello.py
+  ls -l hello.py
+  chmod o+x hello.py
+  ls -l hello.py
+  chmod g+s hello.py
+  ls -l hello.py
+5.chown manjubala hello.py
+  ls -l hello.py
+  chown -R  manjubala /home/manjubala/python\ exercise/
+  ls -l hello.py
+  chown hopel hello.py
+  ls -l hello.py
+6.ddd
+7.df
+  df -a
+  df -h
+  df -hT
+  df -k
+  df -m
+  df -h
+  df -i
+  df -T
+8.diff new.py new1.py
+  diff -q new.py new1.py
+  diff -s new.py new1.py
+  diff -y new.py new1.py
+  diff -w new.py new1.py
+  diff -B new.py new1.py
+9.du /home/manjubala/python\ exercise
+  du -h /home/manjubala/python\ exercise
+10.emacs
+11.enscript text.txt -o - | ps2pdf - output.pdf
+12.env
+   printenv SHELL
+13.fg
+   bg
+   python hello.py &
+   fg
+14.fsck /dev/sda6
+   fsck /dev/sda2
+   fsck -A
+   fsck -M /dev/sda7
+15.gdb --args python tiles.py
+   run
+   gdb --args python helloworld.py
+16.grep "hello" hello.py
+   grep --color "hello" hello.py
+   grep --color -n "hello" hello.py
+   grep --color -n -i "hello" hello.py
+   grep --color -n -i -R "hello" hello.py
+   grep -c "hello" hello.py 
+17.kdbg
+18.ps
+   kill pid
+   kill -9 pid
+   killall -l
+   killall -I
+19.ln hello.py hello2.py
+   ls -lt
+   ln hello.py hello3.py
+   ls -lt
+   ln -s -b hello.py hello4.py
+   ls -lt
+   ln -s -i hello.py hello4.py
+   ls -lt
+20.ls
+   ls -l
+   ls -lt
+   ls -i
+21.lynx -s
+   lynx -t
+22.make
+   ./P0
+23.man ls
+   man -k
+24.mkfs***************************************************************
+25.nohup grep -c "hello" hello.py > log.txt &
+26.od -b text.txt
+   od -c text.txt
+   od -A text.txt
+   od -i text.txt
+   od -x text.txt
+27.ps
+   ps -e
+28.set $HOME /home/manjubala
+   echo $HOME
+29.sloccount***************************************************************
+30.source hello.sh
+   ##chmod u+x hello.sh
+   ##./hello.sh
+31.time ls -l
+32.tmux**************************************************************************8
+33.umask
+   umask -S
+   umask 022
+   umask
+34.w
+   w -i
+35.wget www.google.com
+36.xxgdb

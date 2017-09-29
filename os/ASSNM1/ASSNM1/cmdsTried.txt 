@@ -1,0 +1,634 @@
+Script started on Saturday 05 August 2017 01:18:55 PM IST
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ [K]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ bash
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sleep 1000
+^Z
+[1]+  Stopped                 sleep 1000
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ bg
+[1]+ sleep 1000 &
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ cat hai.py 
+print "hello, World"
+
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ls-[K -l hai.py 
+-rw-rw-r-- 1 amrit amrit 22 Jul 28 22:15 hai.py
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ c[Ksudo chmod u+z[Kx hai.py 
+[sudo] password for amrit: 
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sudo chmod u+x hai.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Pls -l[C[C[C[C[C[C[C[C
+-rwxrw-r-x 1 amrit amrit 22 Jul 28 22:15 [0m[01;32mhai.py[0m
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sudo chown user h
+hai.py  hello   
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sudo chown user hai.py 
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ls-[K -l hai.py 
+-rwxrw-r-x 1 user amrit 22 Jul 28 22:15 [0m[01;32mhai.py[0m
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ddd
+Warning: Cannot convert string "-*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+(Annoyed?  Try 'Edit->Preferences->General->Suppress X Warnings'!)
+Warning: Cannot convert string "-*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-lucidatypewriter-medium-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-lucidatypewriter-bold-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-medium-*-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-*-*-*-*-120-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-helvetica-bold-r-*-*-*-180-*-*-*-*-iso8859-*" to type FontStruct
+Warning: Cannot convert string "-*-symbol-*-*-*-*-*-120-*-*-*-*-adobe-*" to type FontStruct
+Warning: Could not load font "-*-lucidatypewriter-medium-*-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+Warning: Could not load font "-*-lucidatypewriter-medium-r-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+Warning: Could not load font "-*-lucidatypewriter-bold-*-*-*-*-120-*-*-*-*-iso8859-*", using font "fixed" instead
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.9G     0  3.9G   0% /dev
+tmpfs           786M  9.6M  776M   2% /run
+/dev/sda1       188G  9.3G  169G   6% /
+tmpfs           3.9G  106M  3.8G   3% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda6       256G   51G  193G  21% /home/amrit/amritanand
+tmpfs           786M   80K  786M   1% /run/user/1000
+/dev/sda5        15G   97M   15G   1% /media/amrit/6134b118-bbad-4683-a36e-eadc0c70016c
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ diff hai.py pith.py
+1c1
+< print "hello, World"
+---
+> from random import randint
+2a3,21
+> # Generates a number from 1 through 10 inclusive
+> random_number = randint(1, 10)
+> count=0
+> #print random_number
+> # Start your game!4
+> while count<3:
+>     num=input("Guess a number")
+>     if num==random_number :
+>         print "Hurray...You win"
+>         count+=1
+>         break
+>     else:
+>         print "You lose, Bad luck Try again "
+>         count+=1
+> print"The number right is  %d"%random_number
+>     
+>     
+>     
+>     
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ diff hai.py pith.py[1@-[1@q[1@ 
+Files hai.py and pith.py differ
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ du /*[Khome/amrit/os
+100	/home/amrit/os/Untitled Folder
+240	/home/amrit/os
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ emacs
+[1]+  Done                    sleep 1000
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ env
+XDG_VTNR=7
+XDG_SESSION_ID=c2
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/amrit
+CLUTTER_IM_MODULE=xim
+GPG_AGENT_INFO=/home/amrit/.gnupg/S.gpg-agent:0:1
+VTE_VERSION=4205
+TERM=xterm-256color
+SHELL=/bin/bash
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+WINDOWID=67108874
+GNOME_KEYRING_CONTROL=
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1513
+GTK_MODULES=gail:atk-bridge:unity-gtk-module
+USER=amrit
+QT_ACCESSIBILITY=1
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+DESKTOP_SESSION=ubuntu
+PATH=/home/amrit/bin:/home/amrit/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+QT_IM_MODULE=ibus
+JOB=gnome-session
+PWD=/home/amrit/os
+XDG_SESSION_TYPE=x11
+XMODIFIERS=@im=ibus
+LANG=en_IN
+GNOME_KEYRING_PID=
+MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+GDM_LANG=en_US
+COMPIZ_CONFIG_PROFILE=ubuntu
+IM_CONFIG_PHASE=1
+GDMSESSION=ubuntu
+GTK2_MODULES=overlay-scrollbar
+SESSIONTYPE=gnome-session
+SHLVL=4
+XDG_SEAT=seat0
+HOME=/home/amrit
+LANGUAGE=en_IN:en
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+UPSTART_INSTANCE=
+LOGNAME=amrit
+XDG_SESSION_DESKTOP=ubuntu
+UPSTART_EVENTS=started starting
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-D9LLKyStI5
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+QT4_IM_MODULE=xim
+LESSOPEN=| /usr/bin/lesspipe %s
+UPSTART_JOB=unity-settings-daemon
+INSTANCE=Unity
+DISPLAY=:0
+XDG_RUNTIME_DIR=/run/user/1000
+GTK_IM_MODULE=ibus
+XDG_CURRENT_DESKTOP=Unity
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XAUTHORITY=/home/amrit/.Xauthority
+_=/usr/bin/env
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ fd[Kg
+bash: fg: current: no such job
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ fgenv[1Pfg
+bash: fg: current: no such job
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sleep 2000
+^Z
+[1]+  Stopped                 sleep 2000
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ sleep 2000fg[K
+sleep 2000
+^Z
+[1]+  Stopped                 sleep 2000
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ fsck /dev/sda6
+fsck from util-linux 2.27.1
+e2fsck 1.42.13 (17-May-2015)
+/dev/sda6 is mounted.
+
+
+
+WARNING!!!  The filesystem is mounted.   If you continue you ***WILL***
+cause ***SEVERE*** filesystem damage.
+
+
+Do you really want to continue<n>? no
+check aborted.
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ gdb --args python tiles.py[1P.py[1P.py[1P.py[1P.py[1P.pyh.pya.pyi.py[1P.py[1P.py[1P.pyp.pyi.pyy.pyt.pyh.py[1Pth.py
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from python...(no debugging symbols found)...done.
+(gdb) r
+Starting program: /usr/bin/python pith.py
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Guess a numbere
+Traceback (most recent call last):
+  File "pith.py", line 9, in <module>
+    num=input("Guess a number")
+  File "<string>", line 1, in <module>
+NameError: name 'e' is not defined
+[Inferior 1 (process 31066) exited with code 01]
+(gdb) r
+Starting program: /usr/bin/python pith.py
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Guess a number4
+You lose, Bad luck Try again 
+Guess a number3
+You lose, Bad luck Try again 
+Guess a number5
+You lose, Bad luck Try again 
+The number right is  6
+[Inferior 1 (process 31070) exited normally]
+(gdb) q
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ man ls [K[K[K[K[K[K[Kcat [K[K[K[Kgdb --args python pith.py[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcat hai.py |ger[K[Krep hello
+print "[01;31m[Khello[m[K, World"
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ kdbg
+kdbg(31161) KSambaSharePrivate::getNetUserShareInfo: We got some errors while running 'net usershare info' 
+kdbg(31161) KSambaSharePrivate::getNetUserShareInfo: "info_fn: file /var/lib/samba/usershares/group is not a well formed usershare file.
+info_fn: Error was Path is not a directory.
+" 
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ firefox
+^Z
+[2]+  Stopped                 firefox
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ kill [K[K[K[K[Kps
+  PID TTY          TIME CMD
+29212 pts/17   00:00:00 bash
+29383 pts/17   00:00:00 bash
+30991 pts/17   00:00:00 sleep
+31300 pts/17   00:00:02 firefox
+31374 pts/17   00:00:00 ps
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ kill -9 31300
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ kill -9 31300ps[Kfirefox[K[K[K[K[K[K[Kli[Kn hai.py link[Kkfile
+[2]+  Killed                  firefox
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ls
+cmdsTried.txt  index.html     [0m[01;32mlinkfile[0m  pith.py       t.txt
+[01;32mhai.py[0m         l0asgnmnt.txt  [01;32mln1[0m       -ps2pdf       [01;34mUntitled Folder[0m
+hello          [01;36mlink1[0m          oscmd     scriptitried
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ls | grep linkfile 
+[01;31m[Klinkfile[m[K
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ls
+cmdsTried.txt  index.html     [0m[01;32mlinkfile[0m  pith.py       t.txt
+[01;32mhai.py[0m         l0asgnmnt.txt  [01;32mln1[0m       -ps2pdf       [01;34mUntitled Folder[0m
+hello          [01;36mlink1[0m          oscmd     scriptitried
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ lynx -ws[K[Ks
+lynx: Invalid Option: -s
+USAGE: lynx [options] [file]
+Options are:
+  -                 receive options and arguments from stdin
+  -accept_all_cookies 
+                    accept cookies without prompting if Set-Cookie handling
+                    is on (off)
+  -anonymous        apply restrictions for anonymous account,
+                    see also -restrictions
+  -assume_charset=MIMEname
+                    charset for documents that don't specify it
+  -assume_local_charset=MIMEname
+                    charset assumed for local files
+  -assume_unrec_charset=MIMEname
+                    use this instead of unrecognized charsets
+  -auth=id:pw       authentication information for protected documents
+  -base             prepend a request URL comment and BASE tag to text/html
+                    outputs for -source dumps
+  -bibhost=URL      local bibp server (default http://bibhost/)
+  -book             use the bookmark page as the startfile (off)
+  -buried_news      toggles scanning of news articles for buried references (on)
+  -cache=NUMBER     NUMBER of documents cached in memory
+  -case             enable case sensitive user searching (off)
+  -center           toggle center alignment in HTML TABLE (off)
+  -cfg=FILENAME     specifies a lynx.cfg file other than the default
+  -child            exit on left-arrow in startfile, and disable save to disk
+  -child_relaxed    exit on left-arrow in startfile (allows save to disk)
+  -cmd_log=FILENAME log keystroke commands to the given file
+  -cmd_script=FILENAME
+                    read keystroke commands from the given file
+                    (see -cmd_log)
+  -connect_timeout=N
+                    set the N-second connection timeout (18000)
+  -cookie_file=FILENAME
+                    specifies a file to use to read cookies
+  -cookie_save_file=FILENAME
+                    specifies a file to use to store cookies
+  -cookies          toggles handling of Set-Cookie headers (on)
+  -core             toggles forced core dumps on fatal errors (off)
+  -crawl            with -traversal, output each page to a file
+                    with -dump, format output as with -traversal, but to stdout
+  -curses_pads      uses curses pad feature to support left/right shifting (on)
+  -debug_partial    incremental display stages with MessageSecs delay (off)
+  -default_colors   use terminal default foreground/background colors (on)
+  -delay=NNN        set NNN-second delay at statusline message (0.000)
+  -display=DISPLAY  set the display variable for X exec'ed programs
+  -display_charset=MIMEname
+                    charset for the terminal output
+  -dont_wrap_pre    inhibit wrapping of text in <pre> when -dump'ing and
+                    -crawl'ing, mark wrapped lines in interactive session (off)
+  -dump             dump the first file to stdout and exit
+  -editor=EDITOR    enable edit mode with specified editor
+  -emacskeys        enable emacs-like key movement (off)
+  -enable_scrollback 
+                    toggles compatibility with comm programs' scrollback
+                    keys (may be incompatible with some curses packages) (off)
+  -error_file=FILE  write the HTTP status code here
+  -exec             enable local program execution
+  -force_empty_hrefless_a 
+                    force HREF-less 'A' elements to be empty (close them as
+                    soon as they are seen) (off)
+  -force_html       forces the first document to be interpreted as HTML (off)
+  -force_secure     toggles forcing of the secure flag for SSL cookies (off)
+  -forms_options    toggles forms-based vs old-style options menu (on)
+  -from             toggle transmission of From headers (on)
+  -ftp              disable ftp access (off)
+  -get_data         user data for get forms, read from stdin,
+                    terminated by '---' on a line
+  -head             send a HEAD request (off)
+  -help             print this usage message
+  -hiddenlinks=[option]
+                    hidden links: options are merge, listonly, or ignore
+  -historical       toggles use of '>' or '-->' as terminator for comments (off)
+  -homepage=URL     set homepage separate from start page
+  -html5_charsets   toggles use of HTML5 charset replacements (off)
+  -image_links      toggles inclusion of links for all images (off)
+  -index=URL        set the default index file to URL
+  -ismap            toggles inclusion of ISMAP links when client-side
+                    MAPs are present (off)
+  -justify          do justification of text (off)
+  -link=NUMBER      starting count for lnk#.dat files produced by -crawl (0)
+  -list_inline      with -dump, forces it to show links inline with text (off)
+  -listonly         with -dump, forces it to show only the list of links (off)
+  -localhost        disable URLs that point to remote hosts (off)
+  -locexec          enable local program execution from local files only (off)
+  -lss=FILENAME     specifies a lynx.lss file other than the default
+  -mime_header      include mime headers and force source dump
+  -minimal          toggles minimal versus valid comment parsing (off)
+  -nested_tables    toggles nested-tables logic (on)
+  -newschunksize=NUMBER
+                    number of articles in chunked news listings
+  -newsmaxchunk=NUMBER
+                    maximum news articles in listings before chunking
+  -nobold           disable bold video-attribute
+  -nobrowse         disable directory browsing
+  -nocc             disable Cc: prompts for self copies of mailings (off)
+  -nocolor          turn off color support
+  -noexec           disable local program execution (DEFAULT) (on)
+  -nofilereferer    disable transmission of Referer headers for file URLs (on)
+  -nolist           disable the link list feature in dumps (off)
+  -nolog            disable mailing of error messages to document owners (on)
+  -nomargins        disable the right/left margins in the default
+                    style-sheet (off)
+  -nomore           disable -more- string in statusline messages
+  -nonrestarting_sigwinch 
+                    make window size change handler non-restarting (off)
+  -nonumbers        disable the link/form numbering feature in dumps (off)
+  -nopause          disable forced pauses for statusline messages
+  -noprint          disable some print functions, like -restrictions=print (off)
+  -noredir          don't follow Location: redirection (off)
+  -noreferer        disable transmission of Referer headers (off)
+  -noreverse        disable reverse video-attribute
+  -nostatus         disable the miscellaneous information messages (off)
+  -notitle          disable the title at the top of each page (off)
+  -nounderline      disable underline video-attribute
+  -number_fields    force numbering of links as well as form input fields (off)
+  -number_links     force numbering of links (off)
+  -partial          toggles display partial pages while downloading (on)
+  -partial_thres    [=NUMBER]
+                    number of lines to render before repainting display
+                    with partial-display logic (-1)
+  -passive-ftp      toggles passive ftp connection (on)
+  -pauth=id:pw      authentication information for protected proxy server
+  -popup            toggles handling of single-choice SELECT options via
+                    popup windows or as lists of radio buttons (off)
+  -post_data        user data for post forms, read from stdin,
+                    terminated by '---' on a line
+  -preparsed        show parsed text/html with -source and in source view
+                    to visualize how lynx behaves with invalid HTML (off)
+  -prettysrc        do syntax highlighting and hyperlink handling in source
+                    view (off)
+  -print            enable print functions (DEFAULT), opposite of -noprint (on)
+  -pseudo_inlines   toggles pseudo-ALTs for inlines with no ALT string (on)
+  -raw              toggles default setting of 8-bit character translations
+                    or CJK mode for the startup character set (off)
+  -realm            restricts access to URLs in the starting realm (off)
+  -read_timeout=N   set the N-second read-timeout (18000)
+  -reload           flushes the cache on a proxy server
+                    (only the first document affected) (off)
+  -restrictions=[options]
+                    use -restrictions to see list
+  -resubmit_posts   toggles forced resubmissions (no-cache) of forms with
+                    method POST when the documents they returned are sought
+                    with the PREV_DOC command or from the History List (off)
+  -rlogin           disable rlogins (off)
+  -scrollbar        toggles showing scrollbar (off)
+  -scrollbar_arrow  toggles showing arrows at ends of the scrollbar (on)
+  -selective        require .www_browsable files to browse directories
+  -session=FILENAME resumes from specified file on startup and
+                    saves session to that file on exit
+  -sessionin=FILENAME
+                    resumes session from specified file
+  -sessionout=FILENAME
+                    saves session to specified file
+  -short_url        enables examination of beginning and end of long URL in
+                    status line (off)
+  -show_cfg         Show `LYNX.CFG' setting (off)
+  -show_cursor      toggles hiding of the cursor in the lower right corner (on)
+  -show_rate        toggles display of transfer rate (on)
+  -soft_dquotes     toggles emulation of the old Netscape and Mosaic
+                    bug which treated '>' as a co-terminator for
+                    double-quotes and tags (off)
+  -source           dump the source of the first file to stdout and exit
+  -stack_dump       disable SIGINT cleanup handler (off)
+  -startfile_ok     allow non-http startfile and homepage with -validate (off)
+  -stderr           write warning messages to standard error when -dump
+                    or -source is used (off)
+  -stdin            read startfile from standard input (off)
+  -syslog=text      information for syslog call
+  -syslog-urls      log requested URLs with syslog (off)
+  -tagsoup          use TagSoup rather than SortaSGML parser (off)
+  -telnet           disable telnets (off)
+  -term=TERM        set terminal type to TERM
+  -tlog             toggles use of a Lynx Trace Log for the current
+                    session (on)
+  -tna              turn on "Textfields Need Activation" mode (off)
+  -trace            turns on Lynx trace mode (off)
+  -trace_mask       customize Lynx trace mode (0)
+  -traversal        traverse all http links derived from startfile
+  -trim_input_fields 
+                    trim input text/textarea fields in forms (off)
+  -underline_links  toggles use of underline/bold attribute for links (off)
+  -underscore       toggles use of _underline_ format in dumps (off)
+  -unique_urls      toggles use of unique-urls setting for -dump and -listonly options (off)
+  -use_mouse        turn on mouse support (off)
+  -useragent=Name   set alternate Lynx User-Agent header
+  -validate         accept only http URLs (meant for validation)
+                    implies more restrictions than -anonymous, but
+                    goto is allowed for http and https (off)
+  -verbose          toggles [LINK], [IMAGE] and [INLINE] comments
+                    with filenames of these images (on)
+  -version          print Lynx version information
+  -vikeys           enable vi-like key movement (off)
+  -width=NUMBER     screen width for formatting of dumps (default is 80)
+  -with_backspaces  emit backspaces in output if -dumping or -crawling
+                    (like 'man' does) (off)
+  -xhtml-parsing    enable XHTML 1.0 parsing (off)
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ lynx -s[K[K[K[K[K[K[Kcd P0/
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ make
+make: 'P0' is up to date.
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ ./p0[K[KP0
+The shell has only the following cmds:
+	quit	
+	mkdisk	
+	fddisk	
+	rddisk	u
+	wrdisk	us
+	echo	ssss
+	mkfs	uu
+	findfs	
+	inode	u
+	q	
+Start with ! to invoke a Unix shell cmd
+sh350% q
+cmd [q]
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ man ls
+[?1049h[?1h=LS(1)                            User Commands                           LS(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about  the FILEs (the current directory by default).[m
+       Sort entries alphabetically if none of [1m-cftuvSUX[0m nor [1m--sort[0m  is  speci‐[m
+       fied.[m
+[m
+       Mandatory  arguments  to  long  options are mandatory for short options[m
+       too.[m
+[m
+       [1m-a[0m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[0m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+              with [1m-l[0m, print the author of each file[m
+[m
+       [1m-b[0m, [1m--escape[0m[m
+              print C-style escapes for nongraphic characters[m
+[m
+       [1m--block-size[0m=[4mSIZE[24m[m
+              scale sizes by SIZE before printing them; e.g., '--block-size=M'[m
+              prints sizes in units of 1,048,576 bytes; see SIZE format below[m
+[m
+       [1m-B[0m, [1m--ignore-backups[0m[m
+              do not list implied entries ending with ~[m
+[m
+       [1m-c[0m     with [1m-lt[0m: sort by, and show, ctime (time of last modification of[m
+              file status information); with [1m-l[0m: show ctime and sort by  name;[m
+              otherwise: sort by ctime, newest first[m
+[m
+       [1m-C[0m     list entries by columns[m
+[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--color[0m[=[4mWHEN[24m][m
+[7m Manual page ls(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              colorize  the output; WHEN can be 'always' (default if omitted),[m
+[7m Manual page ls(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              'auto', or 'never'; more info below[m
+[7m Manual page ls(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-d[0m, [1m--directory[0m[m
+[7m Manual page ls(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              list directories themselves, not their contents[m
+[7m Manual page ls(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-D[0m, [1m--dired[0m[m
+[7m Manual page ls(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              generate output designed for Emacs' dired mode[m
+[7m Manual page ls(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-f[0m     do not sort, enable [1m-aU[0m, disable [1m-ls[0m [1m--color[0m[m
+[7m Manual page ls(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-F[0m, [1m--classify[0m[m
+[7m Manual page ls(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              append indicator (one of */=>@|) to entries[m
+[7m Manual page ls(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--file-type[0m[m
+[7m Manual page ls(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              likewise, except do not append '*'[m
+[7m Manual page ls(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--format[0m=[4mWORD[24m[m
+[7m Manual page ls(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              across [1m-x[0m, commas [1m-m[0m, horizontal [1m-x[0m, long [1m-l[0m, single-column  [1m-1[0m,[m
+[7m Manual page ls(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              verbose [1m-l[0m, vertical [1m-C[0m[m
+[7m Manual page ls(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--full-time[0m[m
+[7m Manual page ls(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              like [1m-l[0m [1m--time-style[0m=[4mfull-iso[24m[m
+[7m Manual page ls(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-g[0m     like [1m-l[0m, but do not list owner[m
+[7m Manual page ls(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--group-directories-first[0m[m
+[7m Manual page ls(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              group directories before files;[m
+[7m Manual page ls(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              can   be  augmented  with  a  [1m--sort[0m  option,  but  any  use  of[m
+[7m Manual page ls(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              [1m--sort[0m=[4mnone[24m ([1m-U[0m) disables grouping[m
+[7m Manual page ls(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-G[0m, [1m--no-group[0m[m
+[7m Manual page ls(1) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              in a long listing, don't print group names[m
+[7m Manual page ls(1) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-h[0m, [1m--human-readable[0m[m
+[7m Manual page ls(1) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              with [1m-l[0m and/or [1m-s[0m, print human readable sizes (e.g., 1K 234M 2G)[m
+[7m Manual page ls(1) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--si[0m   likewise, but use powers of 1000 not 1024[m
+[7m Manual page ls(1) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ls(1) line 42 (press h for help or q to quit)[27m[K[K[?1l>[?1049l]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ exit
+There are stopped jobs.
+]0;amrit@mypc: ~/os/P0[01;32mamrit@mypc[00m:[01;34m~/os/P0[00m$ exit
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ exit
+
+Script done on Saturday 05 August 2017 02:25:10 PM IST
+Script started on Saturday 05 August 2017 08:57:22 PM IST
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ nohup grep -c [C[C[C[C h e l l o " [1@"[C[C[C[C[C[C[C h a i.py [C > [C l o g [1P [1P [1P t e s t l o g . t x t 
+nohup: ignoring input and redirecting stderr to stdout
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ cat testlog.txt 
+1
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ cat testlog.txt [27@nohup grep -c "hello" hai.py >[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kod -b hai.py 
+0000000 160 162 151 156 164 040 042 150 145 154 154 157 054 040 127 157
+0000020 162 154 144 042 012 012
+0000026
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ps
+  PID TTY          TIME CMD
+ 8012 pts/20   00:00:00 bash
+ 9718 pts/20   00:00:00 ps
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ exit
+
+Script done on Saturday 05 August 2017 10:15:18 PM IST
+Script started on Sunday 06 August 2017 01:58:43 PM IST
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ set $[K[K[K[K[Kset $HOME /home/amrit
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ ECHO [K[K[K[K[Kecho $HOME
+/home/amrit
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ CAT [K[K[K[Kcat >> ece[K[Kxecfil
+man ls  ls |grep ls
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ so
+soelim                   solid-hardware
+soffice                  sort
+software-properties-gtk  sotruss
+sol                      source
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ source execfil 
+       [01;31m[Kls[m[K - list directory contents
+       [01;31m[Kls[m[K [OPTION]... [FILE]...
+       -f     do not sort, enable -aU, disable -[01;31m[Kls[m[K --color
+              unless program is '[01;31m[Kls[m[K' and output is a terminal)
+              status  (-c); a[01;31m[Kls[m[Ko use specified time as sort key if
+       default  and  with  --color=never.   With  --color=auto, [01;31m[Kls[m[K
+       GNU  coreuti[01;31m[Kls[m[K   online   help:   <http://www.gnu.org/soft‐
+       ware/coreuti[01;31m[Kls[m[K/>
+       Report   [01;31m[Kls[m[K  translation  bugs  to  <http://translationpro‐
+       uti[01;31m[Kls[m[K/[01;31m[Kls[m[K>
+       or available locally via: info '(coreuti[01;31m[Kls[m[K) [01;31m[Kls[m[K invocation'
+GNU coreuti[01;31m[Kls[m[K 8.25         February 2016                     LS(1)
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ y[Ktime ls -l
+total 216
+-rw-rw-r-- 1 amrit amrit 34247 Aug  5 22:15 cmdsTried.txt
+-rw-rw-r-- 1 amrit amrit     7 Aug  6 14:09 exe
+-rw-rw-r-- 1 amrit amrit    16 Aug  6 14:10 execfil
+-rwxrw-r-x 3 user  amrit    22 Jul 28 22:15 [0m[01;32mhai.py[0m
+-rw-rw-r-- 1 amrit amrit    22 Jul 28 21:24 hello
+-rw-rw-r-- 1 amrit amrit 13334 Jul 31 20:58 index.html
+-rw-rw-r-- 1 amrit amrit   788 Jul 26 11:03 l0asgnmnt.txt
+lrwxrwxrwx 1 amrit amrit     6 Jul 28 22:15 [01;36mlink1[0m -> [01;32mhai.py[0m
+-rwxrw-r-x 3 user  amrit    22 Jul 28 22:15 [01;32mlinkfile[0m
+-rwxrw-r-x 3 user  amrit    22 Jul 28 22:15 [01;32mln1[0m
+-rw------- 1 amrit amrit    46 Aug  5 21:02 nohup.out
+-rw-rw-r-- 1 amrit amrit  2149 Aug  5 08:48 oscmd
+drwxrwxr-x 2 amrit amrit  4096 Aug  5 18:54 [01;34mP0[0m
+-rw-rw-r-- 1 amrit amrit   434 Jul 27 11:15 pith.py
+-rw-rw-r-- 1 amrit amrit 12097 Aug  5 13:42 -ps2pdf
+-rw-rw-r-- 1 amrit amrit 88241 Aug  5 14:25 scriptitried
+-rw-rw-r-- 1 amrit amrit     2 Aug  5 22:03 testlog.txt
+-rw-rw-r-- 1 amrit amrit     2 Aug  5 22:02 ts.txt
+-rw-rw-r-- 1 amrit amrit    11 Aug  5 13:41 t.txt
+drwxrwxr-x 2 amrit amrit  4096 Aug  5 13:17 [01;34mUntitled Folder[0m
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.000s
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ umask
+0002
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ [K]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ w
+ 14:12:55 up 29 min,  1 user,  load average: 0.18, 0.15, 0.22
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+amrit    tty7     :0               13:45   29:43  29.55s  0.20s /sbin/upstart --user
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ [K]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ wget www.google.com
+--2017-08-06 14:13:44--  http://www.google.com/
+Resolving www.google.com (www.google.com)... 216.58.203.132, 2404:6800:4007:806::2004
+Connecting to www.google.com (www.google.com)|216.58.203.132|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.google.co.in/?gfe_rd=cr&ei=wNaGWcKGLs3y8Afkk4H4BQ [following]
+--2017-08-06 14:13:44--  http://www.google.co.in/?gfe_rd=cr&ei=wNaGWcKGLs3y8Afkk4H4BQ
+Resolving www.google.co.in (www.google.co.in)... 216.58.197.35, 2404:6800:4007:806::2003
+Connecting to www.google.co.in (www.google.co.in)|216.58.197.35|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html.2’
+
+index.html.2         [<=>        ]       0  --.-KB/s               index.html.2         [ <=>       ]  14.11K  --.-KB/s    in 0.07s   
+
+2017-08-06 14:13:45 (209 KB/s) - ‘index.html.2’ saved [14453]
+
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ xxgdb
+Warning: Cannot convert string "variable" to type FontStruct
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":0"
+      after 1586 requests (1586 known processed) with 0 events remaining.
+]0;amrit@mypc: ~/os[01;32mamrit@mypc[00m:[01;34m~/os[00m$ exit
+
+Script done on Sunday 06 August 2017 02:15:34 PM IST

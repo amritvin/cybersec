@@ -1,0 +1,42 @@
+1.
+They are part of the environment in which a process runs.
+Its variable is a dynamic-named value that can affect the way running processes will behave on a computer.
+Environment variables hold values related to the current environment, like the Operating System or user sessions.
+
+a)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+ 
+   printf("USER : %s\n",getenv("USER"));
+   printf("HOME : %s\n", getenv("HOME"));
+   printf("PWD : %s\n",getenv("PWD"));
+   printf("PATH : %s\n", getenv("PATH"));
+
+
+
+   return(0);
+}
+OUTPUT:
+USER : amrit
+HOME : /home/amrit
+PWD : /home/amrit/os/assign2
+PATH : /home/amrit/bin:/home/amrit/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+   setenv("ROOT","root",1);
+   printf("ROOT: %s\n", getenv("ROOT"));
+
+
+
+   return(0);
+}
+
+

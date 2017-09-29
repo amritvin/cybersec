@@ -1,0 +1,11 @@
+m=input()
+s=""
+#for i in range(0,m):
+s=raw_input()
+l=len(s)
+s=s[0]+str(l)+s[l]
+for i in s :
+	print i
+
+
+

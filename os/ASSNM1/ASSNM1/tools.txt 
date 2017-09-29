@@ -1,0 +1,358 @@
+1.
+	STRACE:
+*Its a tool used by computer experts used for debugging and for solving problems.
+
+*Strace can trace system call even in a ordinary program.
+
+*System calls and siginals are events that happen at the user /kernal interface.
+
+Example from P0
+	strace -i ./P0
+[00007f574139d777] execve("./P0", ["./P0"], [/* 61 vars */]) = 0
+[00007f823f90b4b9] brk(NULL)            = 0x96f000
+[00007f823f90c387] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c47a] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f823fb14000
+[00007f823f90c387] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c327] open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[00007f823f90c2b4] fstat(3, {st_mode=S_IFREG|0644, st_size=106701, ...}) = 0
+[00007f823f90c47a] mmap(NULL, 106701, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f823faf9000
+[00007f823f90c427] close(3)             = 0
+[00007f823f90c387] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c327] open("/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+[00007f823f90c347] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \235\10\0\0\0\0\0"..., 832) = 832
+[00007f823f90c2b4] fstat(3, {st_mode=S_IFREG|0644, st_size=1566440, ...}) = 0
+[00007f823f90c47a] mmap(NULL, 3675136, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f823f56f000
+[00007f823f90c517] mprotect(0x7f823f6e1000, 2097152, PROT_NONE) = 0
+[00007f823f90c47a] mmap(0x7f823f8e1000, 49152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x172000) = 0x7f823f8e1000
+[00007f823f90c47a] mmap(0x7f823f8ed000, 13312, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f823f8ed000
+[00007f823f90c427] close(3)             = 0
+[00007f823f90c387] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c327] open("/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+[00007f823f90c347] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p*\0\0\0\0\0\0"..., 832) = 832
+[00007f823f90c2b4] fstat(3, {st_mode=S_IFREG|0644, st_size=89696, ...}) = 0
+[00007f823f90c47a] mmap(NULL, 2185488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f823f359000
+[00007f823f90c517] mprotect(0x7f823f36f000, 2093056, PROT_NONE) = 0
+[00007f823f90c47a] mmap(0x7f823f56e000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f823f56e000
+[00007f823f90c427] close(3)             = 0
+[00007f823f90c387] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c327] open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[00007f823f90c347] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832
+[00007f823f90c2b4] fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0
+[00007f823f90c47a] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f823faf8000
+[00007f823f90c47a] mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f823ef8f000
+[00007f823f90c517] mprotect(0x7f823f14f000, 2097152, PROT_NONE) = 0
+[00007f823f90c47a] mmap(0x7f823f34f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7f823f34f000
+[00007f823f90c47a] mmap(0x7f823f355000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f823f355000
+[00007f823f90c427] close(3)             = 0
+[00007f823f90c387] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f823f90c327] open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+[00007f823f90c347] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0V\0\0\0\0\0\0"..., 832) = 832
+[00007f823f90c2b4] fstat(3, {st_mode=S_IFREG|0644, st_size=1088952, ...}) = 0
+[00007f823f90c47a] mmap(NULL, 3178744, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f823ec86000
+[00007f823f90c517] mprotect(0x7f823ed8e000, 2093056, PROT_NONE) = 0
+[00007f823f90c47a] mmap(0x7f823ef8d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x107000) = 0x7f823ef8d000
+[00007f823f90c427] close(3)             = 0
+[00007f823f90c47a] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f823faf7000
+[00007f823f90c47a] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f823faf5000
+[00007f823f8f1bd5] arch_prctl(ARCH_SET_FS, 0x7f823faf5740) = 0
+[00007f823f90c517] mprotect(0x7f823f34f000, 16384, PROT_READ) = 0
+[00007f823f90c517] mprotect(0x7f823ef8d000, 4096, PROT_READ) = 0
+[00007f823f90c47a] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f823faf4000
+[00007f823f90c517] mprotect(0x7f823f8e1000, 40960, PROT_READ) = 0
+[00007f823f90c517] mprotect(0x604000, 4096, PROT_READ) = 0
+[00007f823f90c517] mprotect(0x7f823fb16000, 4096, PROT_READ) = 0
+[00007f823f90c4f7] munmap(0x7f823faf9000, 106701) = 0
+[00007f823f08bdd9] brk(NULL)            = 0x96f000
+[00007f823f08bdd9] brk(0x9a1000)        = 0x9a1000
+[00007f823f085c04] fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 2), ...}) = 0
+[00007f823f086290] write(1, "The shell has only the following"..., 39The shell has only the following cmds:
+) = 39
+[00007f823f086290] write(1, "\tquit\t\n", 7	quit	
+) = 7
+[00007f823f086290] write(1, "\tmkdisk\t\n", 9	mkdisk	
+) = 9
+[00007f823f086290] write(1, "\tfddisk\t\n", 9	fddisk	
+) = 9
+[00007f823f086290] write(1, "\trddisk\tu\n", 10	rddisk	u
+) = 10
+[00007f823f086290] write(1, "\twrdisk\tus\n", 11	wrdisk	us
+) = 11
+[00007f823f086290] write(1, "\techo\tssss\n", 11	echo	ssss
+) = 11
+[00007f823f086290] write(1, "\tmkfs\tuu\n", 9	mkfs	uu
+) = 9
+[00007f823f086290] write(1, "\tfindfs\t\n", 9	findfs	
+) = 9
+[00007f823f086290] write(1, "\tinode\tu\n", 9	inode	u
+) = 9
+[00007f823f086290] write(1, "\tq\t\n", 4	q	
+) = 4
+[00007f823f086290] write(1, "Start with ! to invoke a Unix sh"..., 40Start with ! to invoke a Unix shell cmd
+) = 40
+[00007f823f085c04] fstat(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 2), ...}) = 0
+[00007f823f086290] write(1, "sh350% ", 7sh350% ) = 7
+[00007f823f086230] read(0, mkfs
+"mkfs\n", 1024) = 5
+[00007f823f086290] write(1, "cmd [mkfs]\n", 11cmd [mkfs]
+) = 11
+[00007f823f086290] write(1, "Cmd mkfs needs the simDisk to be"..., 39Cmd mkfs needs the simDisk to be != 0.
+) = 39
+[00007f823f086290] write(1, "arg #0 ((null)) must be a number"..., 34arg #0 ((null)) must be a number.
+) = 34
+[00007f823f086290] write(1, "arg #1 ((null)) must be a number"..., 34arg #1 ((null)) must be a number.
+) = 34
+[00007f823f086290] write(1, "sh350% ", 7sh350% ) = 7
+[00007f823f086230] read(0, q
+"q\n", 1024) = 2
+[00007f823f086290] write(1, "cmd [q]\n", 8cmd [q]
+) = 8
+[00007f823f05b748] exit_group(0)        = ?
+[????????????????] +++ exited with 0 +++
+
+
+
+
+
+2
+LTRACE
+*Its a program that simply runs the specified command until it exists.
+
+*It intercepts and records the dynamic library calls which are called by the executed process and the signals which are received by that process.  
+
+*ltrace shows parameters of invoked functions and system call.
+       
+       
+       ltrace ./P0
+       
+__libc_start_main(0x403567, 1, 0x7ffce33abec8, 0x403650 <unfinished ...>
+puts("The shell has only the following"...The shell has only the following cmds:
+)     = 39
+printf("\t%s\t%s\n", "quit", ""	quit	
+)                = 7
+printf("\t%s\t%s\n", "mkdisk", ""	mkdisk	
+)              = 9
+printf("\t%s\t%s\n", "fddisk", ""	fddisk	
+)              = 9
+printf("\t%s\t%s\n", "rddisk", "u"	rddisk	u
+)             = 10
+printf("\t%s\t%s\n", "wrdisk", "us"	wrdisk	us
+)            = 11
+printf("\t%s\t%s\n", "echo", "ssss"	echo	ssss
+)            = 11
+printf("\t%s\t%s\n", "mkfs", "uu"	mkfs	uu
+)              = 9
+printf("\t%s\t%s\n", "findfs", ""	findfs	
+)              = 9
+printf("\t%s\t%s\n", "inode", "u"	inode	u
+)              = 9
+printf("\t%s\t%s\n", "q", ""	q	
+)                   = 4
+puts("Start with ! to invoke a Unix sh"...Start with ! to invoke a Unix shell cmd
+)     = 40
+printf("%s", "sh350% ")                         = 7
+fgets(sh350% findfs
+"findfs\n", 1023, 0x7f00405828e0)         = 0x7ffce33ab9d0
+strlen("findfs\n")                              = 7
+printf("cmd [%s]\n", "findfs"cmd [findfs]
+)                  = 13
+strtok("findfs", " \t")                         = "findfs"
+strcmp("findfs", "quit")                        = -11
+strcmp("findfs", "mkdisk")                      = -7
+strcmp("findfs", "fddisk")                      = 5
+strcmp("findfs", "rddisk")                      = -12
+strcmp("findfs", "wrdisk")                      = -17
+strcmp("findfs", "echo")                        = 1
+strcmp("findfs", "mkfs")                        = -7
+strcmp("findfs", "findfs")                      = 0
+strlen("")                                      = 0
+_Znam(0, 0x4038ee, 0x7f0000000000000, 2232)     = 0x20ad440
+_Znwm(192, 0x20ad450, 0x20ad440, 0x7f0040582b20) = 0x20ad460
+--- SIGSEGV (Segmentation fault) ---
++++ killed by SIGSEGV +++
+
+	
+3.
+     NM	
+*nm lists the symbols from object files objfile. 
+
+*If no object files are listed as arguments, nm assumes the file a.out. 
+
+*If lowercase, the symbol is local; if uppercase, the symbol is global (external).
+  
+  nm -s ./P0
+                 U atoi@@GLIBC_2.2.5
+0000000000605264 B __bss_start
+0000000000605288 B cfv
+                 U close@@GLIBC_2.2.5
+0000000000605120 D cmdTable
+0000000000605278 b completed.7585
+0000000000605100 D __data_start
+0000000000605100 W data_start
+0000000000400db0 t deregister_tm_clones
+0000000000400e30 t __do_global_dtors_aux
+0000000000604df8 t __do_global_dtors_aux_fini_array_entry
+0000000000605108 D __dso_handle
+0000000000604e08 d _DYNAMIC
+0000000000605264 D _edata
+0000000000605290 B _end
+                 U exit@@GLIBC_2.2.5
+                 U fclose@@GLIBC_2.2.5
+                 U fgets@@GLIBC_2.2.5
+00000000004036e0 T _fini
+                 U fopen@@GLIBC_2.2.5
+0000000000400e50 t frame_dummy
+0000000000604df0 t __frame_dummy_init_array_entry
+00000000004045d8 r __FRAME_END__
+                 U fscanf@@GLIBC_2.2.5
+00000000004036d0 W fstat
+00000000004036d0 T __fstat
+                 U __fxstat@@GLIBC_2.2.5
+0000000000605000 d _GLOBAL_OFFSET_TABLE_
+                 w __gmon_start__
+0000000000403a18 r __GNU_EH_FRAME_HDR
+                 U __gxx_personality_v0@@CXXABI_1.3
+0000000000400b68 T _init
+0000000000604df8 t __init_array_end
+0000000000604df0 t __init_array_start
+00000000004036f0 R _IO_stdin_used
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+0000000000604e00 d __JCR_END__
+0000000000604e00 d __JCR_LIST__
+                 w _Jv_RegisterClasses
+00000000004036c0 T __libc_csu_fini
+0000000000403650 T __libc_csu_init
+                 U __libc_start_main@@GLIBC_2.2.5
+                 U lseek@@GLIBC_2.2.5
+0000000000403567 T main
+                 U memcpy@@GLIBC_2.14
+                 U memset@@GLIBC_2.2.5
+0000000000605260 D ncmds
+                 U open@@GLIBC_2.2.5
+                 U printf@@GLIBC_2.2.5
+                 U puts@@GLIBC_2.2.5
+                 U read@@GLIBC_2.2.5
+0000000000400df0 t register_tm_clones
+0000000000605280 B simDisk
+                 U sprintf@@GLIBC_2.2.5
+                 U __stack_chk_fail@@GLIBC_2.4
+0000000000400d80 T _start
+0000000000605270 B stdin@@GLIBC_2.2.5
+                 U strcmp@@GLIBC_2.2.5
+                 U strlen@@GLIBC_2.2.5
+                 U strncpy@@GLIBC_2.2.5
+                 U strtok@@GLIBC_2.2.5
+                 U system@@GLIBC_2.2.5
+0000000000605268 D __TMC_END__
+                 U _Unwind_Resume@@GCC_3.0
+                 U write@@GLIBC_2.2.5
+0000000000402dd8 T _Z10doMakeDiskP3Arg
+0000000000402f28 T _Z10doReadDiskP3Arg
+0000000000402b44 T _Z10releaseCfvv
+0000000000402e0e T _Z11doWriteDiskP3Arg
+0000000000402bd5 T _Z13isAlphaNumDotc
+0000000000402b17 T _Z14releaseSimDiskv
+0000000000402b86 T _Z4TODOPKc
+0000000000402b71 T _Z4TODOv
+0000000000402c19 T _Z5toNumPKc
+0000000000403138 T _Z5usagev
+0000000000402fd7 T _Z6doEchoP3Arg
+0000000000402fb7 T _Z6doQuitP3Arg
+0000000000403104 T _Z7doInodeP3Arg
+00000000004034b3 T _Z7findCmdPc
+0000000000402baf T _Z7isDigitc
+000000000040350d T _Z7ourgetsPcj
+00000000004030c1 T _Z8doFindFSP3Arg
+0000000000403059 T _Z8doMakeFSP3Arg
+00000000004031a1 T _Z9invokeCmdi
+0000000000402c71 T _Z9mkSimDiskv
+                 U _ZdlPv@@GLIBCXX_3.4
+0000000000402abc T _ZN10FileVolume10writeBlockEjPv
+0000000000402aea T _ZN10FileVolume9readBlockEjPv
+00000000004029d0 T _ZN10FileVolumeC1EP7SimDisk
+0000000000402856 T _ZN10FileVolumeC1EP7SimDiskjj
+00000000004029d0 T _ZN10FileVolumeC2EP7SimDisk
+0000000000402856 T _ZN10FileVolumeC2EP7SimDiskjj
+0000000000401af6 T _ZN4File10writeBlockEjPv
+0000000000401b56 T _ZN4File11appendBytesEPvj
+0000000000401a4c T _ZN4File14appendOneBlockEPvj
+0000000000401ccc T _ZN4File20deletePrecedingBytesEj
+000000000040197c T _ZN4File23prepareToReadByteByByteEv
+00000000004019ba T _ZN4File8nextByteEPh
+00000000004018a4 T _ZN4File9readBlockEjPv
+000000000040181a T _ZN4FileC1EP10FileVolumej
+000000000040181a T _ZN4FileC2EP10FileVolumej
+0000000000401884 T _ZN4FileD1Ev
+0000000000401884 T _ZN4FileD2Ev
+000000000040221a T _ZN6Inodes11getFileSizeEj
+00000000004022d2 T _ZN6Inodes11incFileSizeEji
+0000000000402266 T _ZN6Inodes11setFileSizeEjj
+00000000004021aa T _ZN6Inodes12getFreeInodeEv
+0000000000402660 T _ZN6Inodes13releaseBlocksEj
+00000000004023e0 T _ZN6Inodes14addBlockNumberEjj
+0000000000402602 T _ZN6Inodes14getBlockNumberEjj
+000000000040239c T _ZN6Inodes17addDoubleIndirectEPjjj
+00000000004023be T _ZN6Inodes17addSingleIndirectEPjjj
+000000000040237a T _ZN6Inodes17addTripleIndirectEPjjj
+00000000004027a4 T _ZN6Inodes4showEj
+0000000000401e90 T _ZN6Inodes6createEP10FileVolumejjj
+000000000040275e T _ZN6Inodes7releaseEj
+0000000000402072 T _ZN6Inodes8getInodeEjPj
+0000000000402158 T _ZN6Inodes8putInodeEj
+0000000000402026 T _ZN6Inodes8reCreateEP10FileVolume
+0000000000402570 T _ZN6Inodes9lastBlockEj
+0000000000401150 T _ZN7SimDisk10readSectorEjPv
+00000000004011de T _ZN7SimDisk11writeSectorEjPv
+000000000040109e T _ZN7SimDisk13makeDiskImageEv
+0000000000401020 T _ZN7SimDisk13openDiskImageEj
+000000000040126c T _ZN7SimDisk6findfsEv
+00000000004012bc T _ZN7SimDisk6makefsEjj
+0000000000400fd4 T _ZN7SimDisk8paramsOKEv
+0000000000400e76 T _ZN7SimDiskC1EPKcjj
+0000000000400e76 T _ZN7SimDiskC2EPKcjj
+0000000000401680 T _ZN9BitVector10getFreeBitEv
+0000000000401318 T _ZN9BitVector6createEP10FileVolumejj
+00000000004014bc T _ZN9BitVector6getBitEj
+000000000040156c T _ZN9BitVector6setBitEjj
+000000000040142e T _ZN9BitVector8reCreateEP10FileVolumejj
+00000000004016e2 T _ZN9Directory6createEP10FileVolume
+00000000004017f0 T _ZN9Directory8reCreateEP10FileVolume
+                 U _Znam@@GLIBCXX_3.4
+                 U _Znwm@@GLIBCXX_3.4
+             
+             
+4.
+ldd
+                 
+*ldd prints the shared objects or shared libraries required by each program or shared object specified on the command line. 
+
+*ldd invokes the standard dynamic linker. 
+
+*ldd displays the location of the matching object and the (hexadecimal) address at which it is loaded
+
+$ ldd /bin/ls
+               linux-vdso.so.1 (0x00007ffcc3563000)
+               libselinux.so.1 => /lib64/libselinux.so.1 (0x00007f87e5459000)
+               libcap.so.2 => /lib64/libcap.so.2 (0x00007f87e5254000)
+               libc.so.6 => /lib64/libc.so.6 (0x00007f87e4e92000)
+               libpcre.so.1 => /lib64/libpcre.so.1 (0x00007f87e4c22000)
+               libdl.so.2 => /lib64/libdl.so.2 (0x00007f87e4a1e000)
+               /lib64/ld-linux-x86-64.so.2 (0x00005574bf12e000)
+               libattr.so.1 => /lib64/libattr.so.1 (0x00007f87e4817000)
+               libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f87e45fa000)
+               
+               
+ ldd ./P0
+	linux-vdso.so.1 =>  (0x00007fffe3bef000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f786422b000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f7864015000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7863c4a000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f7863941000)
+	/lib64/ld-linux-x86-64.so.2 (0x000056426e223000)
+
+
+
+
+
+	
+	

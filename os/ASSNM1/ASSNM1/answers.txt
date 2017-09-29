@@ -1,0 +1,130 @@
+1.
+CFLAGS and CxxFLAGS are conventionally used in makefile for c and c++ respectively.
+It enables the addition of switches for the C compiler. CXXFLAGS is meant to be used when invoking a C++ compiler.
+___________________________________________________________________________________________________________________________________________
+2.mkdisk
+wrdisk 28 hello
+rddisk 28
+!od -x D1.dsk > d1.txt
+quit
+ When mkdisk is given a disk D1 is created of size 124 blocks each with 512 bytes.
+Wrdisk is function for writing into the the disk. The given input is written to the disk .
+Rddisk reads the content of the disk D1.dsk
+Then that data is converted into hexa-decimal format (-x) is used for that.
+___________________________________________________________________________________________________________________________________________
+3.
+The indent program can be used to make code easier to read.
+It can also convert from one style of writing C to another.
+indent understands a substantial amount about the syntax of C,
+___________________________________________________________________________________________________________________________________________
+4.
+..................................................................................................................................................
+fopen	: 
+>opens the file specified.
+
+>Open for reading and appending (writing at end of file).
+ 
+>The file is created if it does not exist.
+ 
+>The initial file position for reading is at the beginning of the file, but output is always appended to the end of the file.
+
+.................................................................................................................................................
+
+fclose	:	
+>The fclose() function flushes the stream.
+
+> closes the underlying file descriptor.
+
+..................................................................................................................................................
+
+fread	:
+>function fread() reads  items of data, each size bytes long, from specified file discriptor.
+
+..................................................................................................................................................
+
+fwrite	:
+>The function fwrite() writes elements of data, each size bytes long, to the stream pointed to by stream, 
+
+>obtaining them from the location given by ptr.
+..................................................................................................................................................
+
+fstat	: 
+
+>identical to stat(), except that the file to be stat-ed is specified by the file descriptor fd.
+
+>stats the file pointed to by path and fills in buf.
+
+>These functions return information about a file.
+
+>No permissions are required on the file itself, but-in the case of stat() and lstat() - execute (search) permission is required on all of the directories in path that lead to the file
+..................................................................................................................................................
+fscanf	:
+>reads input from the stream pointer, ie from the fd specified
+    
+..................................................................................................................................................
+
+fprintf	: 
+>write output to given file, ie to the standard output stream; 
+
+..................................................................................................................................................
+
+printf	:
+>The functions printf() andvprintf() write output to stdout, 
+>the standard output stream 
+..................................................................................................................................................
+
+sprintf	:
+snprintf() and vsnprintf() write at most size bytes (including the terminating null byte ('\0')) to str.
+.....................................................................................................................................................
+___________________________________________________________________________________________________________________________________________
+5.
+LIB FUNCTION
+
+mprotect
+Mmap
+Arch_prctl
+lseek
+strtok
+
+SYSTEM CALLS
+
+1.Strcmp
+2.Strcmp
+3.Strlen
+4.puts
+5.strncpy
+6.sprintf
+
+___________________________________________________________________________________________________________________________________________
+6.
+void doQuit(Arg * a)
+{
+  releaseCfv();
+  releaseSimDisk();
+  exit(0);
+}
+It Exits from the above function after it reallocate, the disk space a calls exit(0) to quit from the loop and hence from the shell.
+
+___________________________________________________________________________________________________________________________________________
+7.
+>The gets() function has no means of preventing you typing the characters and so should be avoided.
+>It is a dangerous function.
+>It destroys the input string, it is unknown which token is matched, and it can only work with one string at a time.
+
+___________________________________________________________________________________________________________________________________________
+8.Since 
+
+0	Standard input		STDIN_FILENO		stdin
+1	Standard output		STDOUT_FILENO		stdout
+2	Standard error		STDERR_FILENO		stderr
+And therefore fd is  assigned less than 3. In this P0 it is set to 3 always and therefore it is checked with 3
+___________________________________________________________________________________________________________________________________________
+9.
+ 
+Exists will get the value 1 if the size becomes equal. The "==" operator returns the value 1 or 0; 1 for true statements and 0 for the false statements. Hence the Exists will be 1 when ever the size of the buf becomes equal to the product of sectors and no.bytes in a sector.
+___________________________________________________________________________________________________________________________________________
+10.
+
+This format is comfortable, because it is so similar to context of theories of operating systems. We can relate the actions from the name specified. The logic of the program is easy understandable by using this schema.
+___________________________________________________________________________________________________________________________________________
+
