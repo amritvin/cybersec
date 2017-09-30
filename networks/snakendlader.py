@@ -12,6 +12,9 @@ def game():
     snakesis=res["snakes"]
     die=res["die_tosses"]
     windim=dimension**2
+
+    print die
+
     def slcal(p,k):
         su=0
         tem=[]
@@ -41,18 +44,17 @@ def game():
     for i in range(1,pcount+1):
         li=[]
         for j in range(1,len(die)+1):
-            if str(j) not in die:
-                die[str(j)]=0
-            li.append(die[str(j)][str(i)])
-            paths.append(li)
+            if str(i) in die[str(j)]:
+                li.append(die[str(j)][str(i)])
+        paths.append(li)
 
-
-
-    #print paths
+    print paths
     d={}
     gm={}
     snlad={}
+    print len(paths)
     for v in paths:
+        print v
         final_positions.update(slcal(v,ind+1))
         trav[str(ind+1)]=pat[ind]
         squares_traversed.update(trav)
