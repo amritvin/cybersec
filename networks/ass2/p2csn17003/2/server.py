@@ -3,6 +3,7 @@ import json
 import sys
 
 def game(res):
+    ex=0
 
     paths=[]
     pat=[]
@@ -92,7 +93,7 @@ port=int(sys.argv[1])
 s=socket.socket()
 #host=ipaddr
 s.bind((host, port))
-s.listen(10)
+s.listen(3)
 
 def handle_client(s, addr, i):
     while True:
@@ -101,6 +102,7 @@ def handle_client(s, addr, i):
         strp=decoded_data.strip()
         if not strp or str(strp)== "0":
                 print("\nconnection with client " + str(i) + " broken\n")
+                ex=ex+1
                 break
         #print("  CLIENT " + str(i) + " -> " + decoded_data)
         else:
@@ -115,7 +117,7 @@ def handle_client(s, addr, i):
 
 def server():
     i=1
-    while i<=3:
+    while i<1:
         c, addr=s.accept()
         child_pid=os.fork()
         if child_pid==0:
@@ -123,5 +125,7 @@ def server():
                 handle_client(c, addr, i)
         else:
                 i+=1
-
+        if ex==3:
+            print "exiting"
+            exit()
 server()
