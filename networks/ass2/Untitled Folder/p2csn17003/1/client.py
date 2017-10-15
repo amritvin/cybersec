@@ -27,7 +27,7 @@ try:
 
     	#while amount_received < amount_expected:
         data = sock.recv(9999)
-        if str(data)== "0":
+        if str(data.strip())== "0":
             break
         print data
         s="3||2||1||1:2,0,S,W||3:0,1,S||0||2||2:F,6||3:4,5,W,3,0||0||"
