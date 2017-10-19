@@ -156,7 +156,7 @@ class Graph():
             parent.append(-1)
             selected.append(-1)
             key.append(sys.maxint)
-            minHeap.array.append( minHeap.newMinHeapNode(ar[v], key[v]) )
+            minHeap.array.append( minHeap.newMinHeapNode(v, key[v]) )
             minHeap.pos.append(v)
         print minHeap.array
 
@@ -180,6 +180,14 @@ class Graph():
             # Traverse through all adjacent vertices of u
             # (the extracted vertex) and update their
             # distance values
+            class Dictlist(dict):
+                def __setitem__(self, key, value):
+                    try:
+                        self[key]
+                    except KeyError:
+                        super(Dictlist, self).__setitem__(key, [])
+                    self[key].append(value)
+
             for pCrawl in self.graph[u]:
                 v = pCrawl[0]
                 # If shortest distance to v is not finalized
@@ -191,8 +199,21 @@ class Graph():
                     grp[str(u)]=key[v]
                     # update distance value in min heap also
                     minHeap.decreaseKey(v, key[v])
-        print grp
-        printArr(V,parent)
+        #printArr(V,parent)
+        g =Dictlist()
+        wt=0
+        for nd in grp:
+            for l in self.graph[int(nd)]:
+                for i in range(len(l)):
+                    if l[i]==grp[str(nd)]:
+                        g[int(nd)]=l[i-1]
+
+            wt=wt+grp[nd]
+        print "Graph:",g,"weight:",wt,parent
+        for nodes in g:
+            print "%d-->%d"%(nodes,g[nodes])
+
+
 
 
 """ graph = Graph(10)
@@ -210,8 +231,8 @@ graph.addEdge(6,7,3)
 graph.addEdge(7,8,1)
 graph.addEdge(7,9,6)
 graph.addEdge(8,9,7)"""
-graph = Graph(3)
-graph.addEdge(0,1,100)
-graph.addEdge(1,2,1)
-graph.addEdge(0,2,10)
+graph = Graph(4)
+graph.addEdge(1,2,10)
+graph.addEdge(1,3,1)
+graph.addEdge(2,3,1)
 graph.PrimMST()
