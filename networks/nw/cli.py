@@ -3,7 +3,7 @@ import socket
 #s = socket.create_connection((args.ip, args.port))
 s = socket.socket()         # Create a socket object
 host = socket.gethostname() # Get local machine name
-port = 12329 
+port = 8000 
 s.connect((host, port))
 try:
     s.sendall('hello server')

@@ -1,0 +1,1 @@
+cmd_/home/amrit/mtechmaster/os/kernal/4/kern.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/os/kernal/4/kern.ko /home/amrit/mtechmaster/os/kernal/4/kern.o /home/amrit/mtechmaster/os/kernal/4/kern.mod.o ;  true
