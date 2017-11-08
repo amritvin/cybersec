@@ -37,10 +37,17 @@ def compute(src,dest,p1,p2,d3):
         for i in range (0,4-chk):
             d3=d3+'0'
     chunks =split_string(d3,4)
+<<<<<<< HEAD
     chunksum=0
     for i in chunks:
         #print int(i,16)
         chunksum+=int(i,16)
+=======
+    sumchunks=0
+    for i in chunks:
+        #print int(i,16)
+        sumchunks+=int(i,16)
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
 
     """length=4
     chunksum=0000
@@ -68,6 +75,7 @@ def compute(src,dest,p1,p2,d3):
     cs=int(suma,16)^0xFFFF
     hxudl=format(int(hxudl,16),'04x')
     #print hex(p1)[2:]+hex(p2)[2:]+hxudl+hex(cs)[2:]+d3
+<<<<<<< HEAD
     return hex(cs)
 ch=compute(src,dest,p1,p2,data)
 s=""
@@ -75,6 +83,14 @@ s=""
 csum=hex(int(csum,16))
 csum=csum[2:]
 if ch[2:]==csum and udls==udl :
+=======
+    print hex(cs)
+    return hex(cs)
+ch=compute(src,dest,p1,p2,data)
+s=""
+#print ch,csum,udls,udl
+if ch[4:]==csum and udls==udl :
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
     print p1
     print p2
     print udls
@@ -86,6 +102,12 @@ if ch[2:]==csum and udls==udl :
         t=int(e,16)
         s=s+chr(t)
     s = (s.strip('\0'))
+<<<<<<< HEAD
     sys.stdout.write(hashlib.sha256(str(s)).hexdigest()+ '\n')
 else:
     print "Invalid UDP segment"
+=======
+    sys.stdout.write(hashlib.sha256(str(s)).hexdigest())
+else:
+    print "Invalid udp segment"
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76

@@ -7,7 +7,11 @@ def compute():
     p1=int(sys.argv[2])
     p2=int(sys.argv[4])
     d3=str(sys.argv[5])
+<<<<<<< HEAD
     dats=d3
+=======
+    d4=d3
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
     uproto="0x0011"
     udl=8+((len(d3)*4)/8)
     hxudl=hex(udl)
@@ -36,6 +40,18 @@ def compute():
     #print "PARTIAL ",parsum
     #if len(parsum)%4!=0:
         #cp=8-len(parsum)
+<<<<<<< HEAD
+=======
+    #print parsum
+    binaa = int(parsum,16)
+    bina = format(binaa,'016b')
+    #print bina
+    n=len(bina)-16
+    carry = bina[:n]
+    rest = bina[n:]
+    suma= hex(int(carry,2)+int(rest,2))
+    #print suma
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
     parsum=parsum[2:]
     parsum=parsum[::-1]
     #for i in range(1,cp):
@@ -44,8 +60,15 @@ def compute():
     #print "p",parsum
     su=hex(int(parsum[4:],16)+int(parsum[:4],16))
     #print "sum ", su
+<<<<<<< HEAD
     cs=int(su,16)^0xFFFF
     #print "checksum",hex(cs)
     hxudl=format(int(hxudl,16),'04x')
     print hex(p1)[2:]+hex(p2)[2:]+hxudl+hex(cs)[2:]+dats
+=======
+    cs=int(suma,16)^0xFFFF
+    #print "checksum",hex(cs)
+    hxudl=format(int(hxudl,16),'04x')
+    print hex(p1)[2:]+hex(p2)[2:]+hxudl+hex(cs)[2:]+d4
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
 compute()

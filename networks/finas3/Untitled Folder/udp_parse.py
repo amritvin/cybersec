@@ -2,6 +2,10 @@ import sys
 import binascii
 import hashlib
 import socket
+<<<<<<< HEAD
+=======
+csum=udpcheck[12:16]
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
 udpcheck=str(sys.argv[1])
 src=str(sys.argv[2])
 dest=str(sys.argv[3])
@@ -9,7 +13,10 @@ p1=int(udpcheck[:4],16)
 p2=int(udpcheck[4:8],16)
 
 udl=int(udpcheck[8:12],16)
+<<<<<<< HEAD
 csum=udpcheck[12:16]
+=======
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
 l=len(udpcheck)
 data= udpcheck[16:l]
 def compute(src,dest,p1,p2,d3):
@@ -38,7 +45,19 @@ def compute(src,dest,p1,p2,d3):
     for e in chunks:
         chunksum=chunksum+int(e,16)
     parsum=hex(int(srcdestsum,16)+int(portsum,16)+int(hex(chunksum),16)+int(hxudl,16)+int(hxudl,16)+int(uproto,16))
+<<<<<<< HEAD
 
+=======
+    #print parsum
+    binaa = int(parsum,16)
+    bina = format(binaa,'016b')
+    #print bina
+    n=len(bina)-16
+    carry = bina[:n]
+    rest = bina[n:]
+    suma= hex(int(carry,2)+int(rest,2))
+    #print suma
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
     #if len(parsum)%4!=0:
         #cp=8-len(parsum)
     parsum=parsum[2:]
@@ -47,7 +66,11 @@ def compute(src,dest,p1,p2,d3):
     parsum=parsum+"000"
     parsum=parsum[::-1]
     su=hex(int(parsum[4:],16)+int(parsum[:4],16))
+<<<<<<< HEAD
     cs=int(su,16)^0xFFFF
+=======
+    cs=int(suma,16)^0xFFFF
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
     hxudl=format(int(hxudl,16),'04x')
     #print hex(p1)[2:]+hex(p2)[2:]+hxudl+hex(cs)[2:]+d3
     return hex(cs)
@@ -67,4 +90,8 @@ if(ch[2:]==csum):
     s = (s.strip('\0'))
     sys.stdout.write(hashlib.sha256(str(s)).hexdigest())
 else:
+<<<<<<< HEAD
     print "Invalid UDP Segment"
+=======
+    print "Invalid udp segment"
+>>>>>>> 4427243e51f6cf16b50e39f16275fe24b8be2d76
