@@ -3,9 +3,9 @@
 #include<linux/proc_fs.h>
 #include<asm/uaccess.h>
 #define PROCFS_MAX_SIZE 1024
-#define procfs_name "helloword"
-#define DRIVER_AUTHOR "T_r3x-R3xnation.wordpress.org"
-#define DRIVER_DESC "My first licensed driver"
+#define procfs_name "amr"
+#define DRIVER_AUTHOR "amr.org"
+#define DRIVER_DESC "My licensed driver @amr.org"
 static long procfs_buffer_size = 0;
 static char procfs_buffer[PROCFS_MAX_SIZE];
 
@@ -38,7 +38,7 @@ static ssize_t procfile_write(struct file *file, const char *buffer, size_t len,
      if(copy_from_user(procfs_buffer,buffer,procfs_buffer_size))
 	return -EFAULT;
      printk(KERN_DEBUG "procfs_write:write %lu bytes\n",procfs_buffer_size);
-     return len;
+     return procfs_buffer_size;
     }
 
 

@@ -1,0 +1,1 @@
+cmd_/home/amrit/mtechmaster/os/kernal/cr3/cr3.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/os/kernal/cr3/cr3.ko /home/amrit/mtechmaster/os/kernal/cr3/cr3.o /home/amrit/mtechmaster/os/kernal/cr3/cr3.mod.o ;  true
