@@ -26,7 +26,7 @@ l = data.getlayer(scapy.Raw).load
 l=l.strip()
 hashed=hashlib.sha256(l.encode('ascii')).hexdigest()
 #
-a =scapy.IP(dst='127.0.0.1') / scapy.TCP() / scapy.Raw(load=hashed)
+a =scapy.IP(src='127.0.0.1', dst='127.0.0.1') / scapy.TCP(sport=sport, dport=8000, flags='A', seq=SYNACK.ack, ack=SYNACK.seq + len(l)) / scapy.Raw(load=hashed)
 scapy.sendp(a)
 # ...
 FIN=ip/scapy.TCP(sport=sport, dport=8000, flags="FA", seq=SYNACK.ack, ack=SYNACK.seq + 1)

@@ -1,1 +1,1 @@
-cmd_/home/amrit/mtechmaster/os/kernal/kern/kern.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/os/kernal/kern/kern.ko /home/amrit/mtechmaster/os/kernal/kern/kern.o /home/amrit/mtechmaster/os/kernal/kern/kern.mod.o ;  true
+cmd_/home/amrit/mtechmaster/cybersec/os/kernal/kern/kern.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/cybersec/os/kernal/kern/kern.ko /home/amrit/mtechmaster/cybersec/os/kernal/kern/kern.o /home/amrit/mtechmaster/cybersec/os/kernal/kern/kern.mod.o ;  true

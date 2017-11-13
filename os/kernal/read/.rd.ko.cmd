@@ -1,0 +1,1 @@
+cmd_/home/amrit/mtechmaster/cybersec/os/kernal/read/rd.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/cybersec/os/kernal/read/rd.ko /home/amrit/mtechmaster/cybersec/os/kernal/read/rd.o /home/amrit/mtechmaster/cybersec/os/kernal/read/rd.mod.o ;  true
