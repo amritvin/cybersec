@@ -26,9 +26,13 @@ l=l.strip()
 hashed=hashlib.sha256(l.encode('ascii')).hexdigest()
 print hashed
 #
+<<<<<<< HEAD
 
 print "sending hash . . . . . . . . . . . "
 a =scapy.IP(dst='127.0.0.1') / scapy.TCP() / scapy.Raw(load=hashed)
+=======
+a =scapy.IP(src='127.0.0.1', dst='127.0.0.1') / scapy.TCP(sport=sport, dport=8000, flags='A', seq=SYNACK.ack, ack=SYNACK.seq + len(l)) / scapy.Raw(load=hashed)
+>>>>>>> a7bf91220d8f184244065004f6a7d35938295454
 scapy.sendp(a)
 #
 print"Recieving FIN . . . . . . . . . . . . "
