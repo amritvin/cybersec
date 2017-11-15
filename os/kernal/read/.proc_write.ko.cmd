@@ -1,0 +1,1 @@
+cmd_/home/amrit/mtechmaster/os/kernal/read/proc_write.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/amrit/mtechmaster/os/kernal/read/proc_write.ko /home/amrit/mtechmaster/os/kernal/read/proc_write.o /home/amrit/mtechmaster/os/kernal/read/proc_write.mod.o ;  true

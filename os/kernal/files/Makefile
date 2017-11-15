@@ -1,4 +1,4 @@
-obj-m+=proc_write.o
+obj-m+=cr3.o
 all:
 	make -C/lib/modules/$(shell uname -r)/build M=$(PWD) modules
 clean:

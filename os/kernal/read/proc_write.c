@@ -3,9 +3,9 @@
 #include<linux/proc_fs.h>
 #include<asm/uaccess.h>
 #define PROCFS_MAX_SIZE 1024
-#define procfs_name "amr"
-#define DRIVER_AUTHOR "amr.org"
-#define DRIVER_DESC "My licensed driver @amr.org"
+#define procfs_name "myfile_proc"
+#define DRIVER_AUTHOR "amritvin.org"
+#define DRIVER_DESC "My licensed driver @amritvin.org"
 static long procfs_buffer_size = 0;
 static char procfs_buffer[PROCFS_MAX_SIZE];
 
