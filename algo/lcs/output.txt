@@ -1,2 +1,2 @@
-Length is 6 
-LCS of 1231456852236945 and 123456 is 123456
+Length is 8 
+LCS of abcdEFGHI012TheComptERCIENCEISSUPER65452 and AbCdefgh2cmopTERisNice is bdempERN

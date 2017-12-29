@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body style="margin:0;padding:0">
+                <div id="container" style="">Loading....</div>
+
+
+    <script>
+        $(function(){
+
+
+
+
+
+            Highcharts.setOptions({"lang": {}, "global": {}});
+            var option = {"loading": {}, "subtitle": {}, "xAxis": {"type": "datetime", "dateTimeLabelFormats": {"year": "%Y", "day": "%e %b", "month": "%b %y"}}, "title": {"text": "Highchart bubble"}, "series": {}, "labels": {}, "yAxis": {}, "chart": {"renderTo": "container", "type": "bubble"}, "tooltip": {}, "plotOptions": {}, "credits": {"enabled": false}, "colors": {}, "pane": {}, "exporting": {}, "drilldown": {}, "navigation": {}, "legend": {"enabled": true}};
+
+
+ 
+
+            var chart = new Highcharts.Chart(option);
+
+            var data = [{"data": [[Date.UTC(2017,4,9,0,0,0,0), 1, 20], [Date.UTC(2017,4,10,0,0,0,0), 1, 44], [Date.UTC(2017,4,11,0,0,0,0), 1, 21], [Date.UTC(2017,4,12,0,0,0,0), 1, 19], [Date.UTC(2017,4,13,0,0,0,0), 1, 17], [Date.UTC(2017,4,17,0,0,0,0), 1, 35]], "type": "bubble", "name": "User 1"}, {"data": [[Date.UTC(2017,4,13,0,0,0,0), 1, 5], [Date.UTC(2017,5,6,0,0,0,0), 1, 6], [Date.UTC(2017,5,7,0,0,0,0), 1, 16], [Date.UTC(2017,5,8,0,0,0,0), 1, 2], [Date.UTC(2017,5,9,0,0,0,0), 1, 12]], "type": "bubble", "name": "User 2"}, {"data": [[Date.UTC(2017,4,9,0,0,0,0), 1, 63], [Date.UTC(2017,4,10,0,0,0,0), 1, 77], [Date.UTC(2017,4,11,0,0,0,0), 1, 15], [Date.UTC(2017,4,17,0,0,0,0), 1, 120], [Date.UTC(2017,4,18,0,0,0,0), 1, 51], [Date.UTC(2017,4,19,0,0,0,0), 1, 79]], "type": "bubble", "name": "User 3"}, {"data": [[Date.UTC(2017,4,9,0,0,0,0), 1, 30], [Date.UTC(2017,4,10,0,0,0,0), 1, 16], [Date.UTC(2017,4,11,0,0,0,0), 1, 15], [Date.UTC(2017,4,13,0,0,0,0), 1, 30], [Date.UTC(2017,4,25,0,0,0,0), 1, 5]], "type": "bubble", "name": "User 4"}];
+            var dataLen = data.length;
+            for (var ix = 0; ix < dataLen; ix++) {
+                chart.addSeries(data[ix]);
+            }
+ 
+
+
+
+
+
+
+
+        
+    });
+        </script>
+
+    </body>
+</html>

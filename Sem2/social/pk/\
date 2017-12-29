@@ -1,0 +1,24 @@
+from twython import Twython
+
+api_key={
+        'api_key': 'slF4KXLtgUvwpnafMldjCm4qs',
+        'api_secret': 'a9feNqEmFAtFyi9kbMdV7WgEIwuQBDnjeqK6darR2JL9ZrQe6Z',
+        'access_token': '492157369-gf7lLIa3YPyREQ4UY7HyVz99DJaQJetPp6ptRixM',
+        'access_token_secret': 'w1YeBz0AYgDt6R1UPq1KbFl4wkmyz4FjI8Pe7k2cGbWMo'
+}
+twitter= Twython(api_key['api_key'],
+                                api_key['api_secret'],
+                                api_key['access_token'],
+                                api_key['access_token_secret']
+                                )
+ut=twitter.get_user_timeline(screen_name='ponguru',count=50,tweet_mode="extended")
+#print ut[1]['entities']['media'][0]['media_url_https']
+for tweets in ut:
+	if "entities" in tweets:
+		print tweets["entities"]
+		if "media" in tweets:
+			for med in tweets["entities"]["media"]:
+				if "media_url_https" in med:
+					print med["media_url_https"]
+
+

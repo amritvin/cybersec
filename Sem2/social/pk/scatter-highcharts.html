@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body style="margin:0;padding:0">
+                <div id="container" style="">Loading....</div>
+
+
+    <script>
+        $(function(){
+
+
+
+
+
+            Highcharts.setOptions({"lang": {}, "global": {}});
+            var option = {"loading": {}, "subtitle": {}, "xAxis": {"title": {"text": "Followers (thousands)"}}, "title": {"text": "Highchart scatter"}, "series": {}, "labels": {}, "yAxis": {"title": {"text": "Friends (thousands)"}}, "chart": {"renderTo": "container", "type": "scatter"}, "tooltip": {}, "plotOptions": {}, "credits": {"enabled": false}, "colors": {}, "pane": {}, "exporting": {}, "drilldown": {}, "navigation": {}, "legend": {"enabled": true}};
+
+
+ 
+
+            var chart = new Highcharts.Chart(option);
+
+            var data = [{"name": "Celebrity accounts", "color": "rgba(223,83,83,0.5)", "type": "scatter", "data": [[161, 51], [167, 59], [159, 49], [157, 63], [155, 53]]}, {"name": "Normal user accounts", "color": "rgba(119,152,192,191,0.5)", "type": "scatter", "data": [[174, 65], [175, 171], [193, 100], [186, 172], [107, 170]]}];
+            var dataLen = data.length;
+            for (var ix = 0; ix < dataLen; ix++) {
+                chart.addSeries(data[ix]);
+            }
+ 
+
+
+
+
+
+
+
+        
+    });
+        </script>
+
+    </body>
+</html>

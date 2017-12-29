@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body style="margin:0;padding:0">
+                <div id="container" style="">Loading....</div>
+
+
+    <script>
+        $(function(){
+
+
+
+
+
+            Highcharts.setOptions({"lang": {}, "global": {}});
+            var option = {"loading": {}, "subtitle": {}, "xAxis": {"categories": ["Jan-Jun_09", "Jul-Dec_09", "Jan-Jun_10", "Jul-Dec_10", "Jan-Jun_11", "Jul-Dec_11", "Jan-Jun_12", "Jul-Dec_12", "Jan-Jun_13", "Jul-Dec_13", "Jan-Jun_14", "Jul-Dec_14", "Jan-Jun_15", "Jul-Dec_15", "Jan-Jun_16", "Jul-Dec_16", "Jan-Jun_17", "Jul-Dec_17", "Jan-Jun_18", "Jul-Dec_18"]}, "title": {"text": "PK's TIME-LINE"}, "series": {}, "labels": {}, "yAxis": {"title": {"text": "Number of Tweets"}}, "chart": {"renderTo": "container", "type": "line"}, "tooltip": {}, "plotOptions": {}, "credits": {"enabled": false}, "colors": {}, "pane": {}, "exporting": {}, "drilldown": {}, "navigation": {}, "legend": {"enabled": true}};
+
+
+ 
+
+            var chart = new Highcharts.Chart(option);
+
+            var data = [{"data": [0, 0, 0, 0, 18, 51, 46, 75, 164, 139, 196, 122, 172, 80, 362, 136, 138, 210], "type": "line", "name": "PK"}];
+            var dataLen = data.length;
+            for (var ix = 0; ix < dataLen; ix++) {
+                chart.addSeries(data[ix]);
+            }
+ 
+
+
+
+
+
+
+
+        
+    });
+        </script>
+
+    </body>
+</html>
