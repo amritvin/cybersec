@@ -1,4 +1,4 @@
-simport json
+import json
 import re
 from twython import Twython
 from nltk import word_tokenize
