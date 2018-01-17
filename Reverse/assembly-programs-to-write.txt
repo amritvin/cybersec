@@ -1,0 +1,11 @@
+1. Write a program to print first 10 lines in a file. Assume unix lines i.e.
+   ends in '\n'.
+2. Write a program to print sum of numbers given start, end and step as command
+   line arguments.
+3. Check if string passed as argument is a palindrome or not.
+4. Write a program to display environment variables. If any arguments are
+   provided, print out values of those variables(if they exist), otherwise print
+   "Not found". If no arguments are provided, print out all environment variables:
+   similar to output of env command without any arguments.
+5. Write a program that prints out number of bytes, words, lines and length of
+   longest line in a file. Similar to wc command’s all possible outputs.
