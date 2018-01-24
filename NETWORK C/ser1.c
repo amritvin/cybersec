@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
      //accept incoming connections
      clilen = sizeof(cli_addr);
      newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-     //nonblock(newsockfd);        //if we want to set the socket as nonblock, we can uncomment this
+     nonblock(newsockfd);        //if we want to set the socket as nonblock, we can uncomment this
      if (newsockfd < 0) {
         perror("ERROR on accept");
         exit(1);
