@@ -1,213 +1,142 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="http://cultivatingchange.org/xmlrpc.php">
+<html class='web-platform pages_v1' id='ng-app' ng-app='pages' xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:ng='http://angularjs.org' xmlns:wp='http://wishpond.com'>
+<head prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website# '>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(13),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,-1!==o.indexOf("dev")&&(s.dev=!0),-1!==o.indexOf("nr_dev")&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f?f.apply(this,a(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(14),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(7),t(6),"addEventListener"in window&&t(4),c.xhrWrappable&&t(8),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(7),s=t(6);t("loader").features.stn=!0,t(5);var c=NREUM.o.EV;o.on("fn-start",function(t,e){var n=t[0];n instanceof c&&(this.bstStart=Date.now())}),o.on("fn-end",function(t,e){var n=t[0];n instanceof c&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on("fn-end",function(t,e){i("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),s.on("fn-start",function(){this.bstStart=Date.now()}),s.on("fn-end",function(t,e){i("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on("pushState-start",function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on("pushState-end",function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(t){i("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(t){i("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",r,!1),document.addEventListener("keypress",r,!1),document.addEventListener("click",r,!1)}},{}],4:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(15)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],5:[function(t,e,n){var r=t("ee").get("history"),o=t(15)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],6:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r);e.exports=r,o.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],7:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i);e.exports=i,a.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),a.inPlace(window,["setInterval"],"setInterval-"),a.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),i.on("setInterval-start",r),i.on("setTimer-start",o)},{}],8:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",s)}function i(t){w.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<w.length;t++)r([],w[t]);w.length&&(w=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(4);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],w=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],9:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;l>r;r++)t.removeEventListener(d[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return i(r)}function i(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}function a(t,e){var n=f(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(10),u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(12),m=window.XMLHttpRequest;s.features.xhr=!0,t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||10>h)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},a(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var a=i(r);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;l>s;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],10:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],11:[function(t,e,n){function r(t,e){return function(){o(t,[(new Date).getTime()].concat(a(arguments)),null,e)}}var o=t("handle"),i=t(13),a=t(14);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var s=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(s,function(t,e){newrelic[e]=r(f+e,"api")}),i(c,function(t,e){newrelic[e]=r(f+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),o("err",[t,(new Date).getTime()])}},{}],12:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],13:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],14:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],15:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(14),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;s>c;c++)a[c].apply(i,r);var u=f[v[n]];return u&&u.push([w,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",v[n]=e,e in f||(f[e]=[])})}var m={},v={},w={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return w}function i(){return new r}var a="nr@context",s=t("gos"),c=t(13),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!m++){var t=h.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(l,function(e,n){t[e]||(t[e]=n)});var n="https"===d.split(":")[0]||t.sslForHttp;h.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=h.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(13),f=window,u=f.document;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(11);var d=""+location,l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-918.min.js"},p=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),h=e.exports={offset:a(),origin:d,features:{},xhrWrappable:p};u.addEventListener?(u.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(u.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),s("mark",["firstbyte",a()],null,"api");var m=0},{}]},{},["loader",2,9,3]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"b0ad24943f",applicationID:"1774757",sa:1}
+</script>
 
-<!-- FAVICONS -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#165c31">
-<meta name="theme-color" content="#165c31">
-
-<!-- FONTS -->
-<!-- Dev Icons -->
-<link rel="stylesheet" href="https://i.icomoon.io/public/a8c6eb6311/Hive1/style.css">
-<!-- Prod Link -->
-<!-- <link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/34692/Hive1/style.css?su3hy2"> -->
-<script src="https://use.typekit.net/hds8nda.js"></script>
-<script>try{Typekit.load({ async: false });}catch(e){}</script>
-
-<title>Vote - Cultivating Change</title>
-
-<!-- This site is optimized with the Yoast SEO plugin v6.0 - https://yoast.com/wordpress/plugins/seo/ -->
-<meta name="description" content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each day, and you can cast votes every day until the end of January."/>
-<link rel="canonical" href="http://cultivatingchange.org/vote/" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Voting is Open!" />
-<meta property="og:description" content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each day, and you can cast votes every day until the end of January." />
-<meta property="og:url" content="http://cultivatingchange.org/vote/" />
-<meta property="og:site_name" content="Cultivating Change" />
-<meta property="article:publisher" content="https://www.facebook.com/GreenerFieldsTogether/" />
-<meta property="og:image" content="http://cultivatingchange.org/wp-content/uploads/2017/12/facebook-pic.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each day, and you can cast votes every day until the end of January." />
-<meta name="twitter:title" content="Voting is Open!" />
-<meta name="twitter:site" content="@GFT2day" />
-<meta name="twitter:image" content="http://cultivatingchange.org/wp-content/uploads/2017/12/facebook-pic.jpg" />
-<meta name="twitter:creator" content="@GFT2day" />
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/cultivatingchange.org\/","name":"Cultivating Change","potentialAction":{"@type":"SearchAction","target":"http:\/\/cultivatingchange.org\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"http:\/\/cultivatingchange.org\/vote\/","sameAs":["https:\/\/www.facebook.com\/GreenerFieldsTogether\/","https:\/\/www.instagram.com\/greenerfieldstogether\/","https:\/\/www.youtube.com\/channel\/UCu1D8qP8H1rpAc9qShHmzCg","https:\/\/twitter.com\/GFT2day"],"@id":"#organization","name":"Greener Fields Together","logo":"http:\/\/cultivatingchange.org\/wp-content\/uploads\/2017\/03\/GFT_Logo.png"}</script>
-<!-- / Yoast SEO plugin. -->
-
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Cultivating Change &raquo; Feed" href="http://cultivatingchange.org/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Cultivating Change &raquo; Comments Feed" href="http://cultivatingchange.org/comments/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/cultivatingchange.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.4"}};
-			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-<link rel='stylesheet' id='stickylist-css'  href='http://cultivatingchange.org/wp-content/plugins/gravity-forms-sticky-list/css/sticky-list_styles.css?ver=4.8.4' type='text/css' media='all' />
-<link rel='stylesheet' id='hive-style-css'  href='http://cultivatingchange.org/wp-content/themes/hive/assets/build/style.css?ver=20171227' type='text/css' media='all' />
-<script type='text/javascript' src='http://cultivatingchange.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://cultivatingchange.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='http://cultivatingchange.org/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cultivatingchange.org/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cultivatingchange.org/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.8.4" />
-<link rel='shortlink' href='http://cultivatingchange.org/?p=709' />
-<link rel="alternate" type="application/json+oembed" href="http://cultivatingchange.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcultivatingchange.org%2Fvote%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://cultivatingchange.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcultivatingchange.org%2Fvote%2F&#038;format=xml" />
-		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107387757-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)};
-  gtag('js', new Date());
+  newrelic.setPageViewName('/pages/v1/2282968', 'https://www.wishpond.com');
+  newrelic.setCustomAttribute('socialCampaignId', '2282968');
+  newrelic.setCustomAttribute('pageVersion', '1');
+  newrelic.setCustomAttribute('pageType', 'pages');
+</script>
+<script>
+  window.wishpond = window.wishpond || {};
+</script>
+<title>
+Voting is Open!
+</title>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='notranslate' name='google'>
+<meta content='!' name='fragment'>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="B5lDL/ox+RVHuQL1HJL7MxRS/jKfXUNoGMefwSe4klE=" name="csrf-token" />
+<base href="https://www.wishpond.com/lp/2282968/" />
+<link href="https://www.wishpond.com/lp/2282968/reference" rel="canonical" />
+<meta content="Voting is Open!" itemprop="name" />
+<meta content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each" itemprop="description" />
+<meta content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each" name="description" />
+<meta property="fb:app_id" value="1432768656951037" />
+<meta content="wishpond_wpool_a:campaign" property="og:type" />
+<meta content="https://www.wishpond.com/lp/2282968/reference" property="og:url" />
+<meta content="https://www.wishpond.com/lp/2282968/reference" name="twitter:url" />
+<meta content="Voting is Open!" property="og:title" />
+<meta content="Voting is Open!" name="twitter:title" />
+<meta content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each" property="og:description" />
+<meta content="Check out these Cultivating Change applications and vote for the local farm you think deserves to win! You may vote for multiple local farms once each" name="twitter:description" />
+<meta content="https://s3.amazonaws.com/media.wishpond.com/media/012/707/104/original.jpg?1514711111" property="og:image" />
+<meta content="https://s3.amazonaws.com/media.wishpond.com/media/012/707/104/original.jpg?1514711111" name="twitter:image" />
+<meta content="@CampaignCards" name="twitter:site" />
+<meta content="summary_large_image" name="twitter:card" />
+<meta content="https://s3.amazonaws.com/media.wishpond.com/media/012/707/104/original.jpg?1514711111" name="twitter:image:src" />
 
-  gtag('config', 'UA-107387757-1');
-</script></head>
+<link href="//d30itml3t0pwpf.cloudfront.net/assets/pages_v1_vendor-74afb14c949f73d3ac5056d7aaf32a5e5f5d98c07708206ca8ff6028e2377736.css" media="screen" rel="stylesheet" />
+<link href="//d30itml3t0pwpf.cloudfront.net/assets/pages_v1-6c38f2e15b5385068899a49f4191340266fcf0e837aa3d74c2f1aaea909984ab.css" media="screen" rel="stylesheet" />
 
-<body class="page-template-default page page-id-709">
-
-<div id="page">
-  <header id="site-header">
-    <div class="container">
-
-      <!-- LOGO -->
-      <a class="site-logo sticky" href="http://cultivatingchange.org/">
-        <img width="57" height="64" src="http://cultivatingchange.org/wp-content/uploads/2017/09/favicon.png" class="attachment-size-logo size-size-logo" alt="Cultivating Change leaf icon" />      </a>
-      
-      <a class="site-logo mobile" href="http://cultivatingchange.org/">
-        <img width="554" height="103" src="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color.png" class="attachment-header-logo size-header-logo" alt="" srcset="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color.png 1108w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-300x56.png 300w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-768x143.png 768w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-1024x190.png 1024w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-425x80.png 425w" sizes="(max-width: 554px) 100vw, 554px" />      </a>
-      
-      <a class="site-logo mobile sticky-mobile" href="http://cultivatingchange.org/">
-        <img width="554" height="103" src="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white.png" class="attachment-header-logo size-header-logo" alt="" srcset="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white.png 848w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-300x56.png 300w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-768x143.png 768w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-425x80.png 425w" sizes="(max-width: 554px) 100vw, 554px" />      </a>
-
-      <!-- NAV -->
-      <nav class="site-nav primary">
-        <a id="mobile-menu-open" class="sliding-panel-button"><i class="icon-hamburger"></i></a>
-        <a id="mobile-menu-close" class="sliding-panel-close"><i class="icon-cross"></i></a>
-        <div class="mobile-menu sliding-panel-content">
-				<ul id="menu-main-menu" class="menu"><li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178"><a href="http://cultivatingchange.org/">Home</a></li>
-<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="http://cultivatingchange.org/about/">About</a></li>
-<li id="menu-item-294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="http://cultivatingchange.org/rules/">Rules</a></li>
-<li id="menu-item-293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-293"><a href="http://cultivatingchange.org/past-winners/">Past Winners</a></li>
-<li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="http://cultivatingchange.org/contact-us/">Contact</a></li>
-</ul><ul id="menu-header-buttons">
-                    <li class="button green"><a href="http://cultivatingchange.org/vote/">Vote Today!</a></li>
-                  </ul>				  
-        </div>
-      </nav>
-
-      <div class="sliding-panel-fade-screen"></div>
-
-    </div>
-  </header>
-
-	<main id="content" class="site-content">
-    
-<!-- PAGE HEADER -->
-<header id="page-header" class="bg-type-image" >
-  <div class="overlay"></div>
-    
-  <div class="cover image" style="background-image:url(http://cultivatingchange.org/wp-content/uploads/2017/03/bg-home.jpg)"></div>  
-  <!-- Sketchy Veggies -->
-  <img class="veggies-header-left veggie rellax" src="http://cultivatingchange.org/wp-content/themes/hive/assets/img/veggies/top-left.png" width="372" height="375" data-rellax-speed="3">
-  <img class="veggies-header-right veggie rellax" src="http://cultivatingchange.org/wp-content/themes/hive/assets/img/veggies/top-right.png" width="254" height="376" data-rellax-speed="3">
-
-  <div class="container">
-
-    <div class="text text-light">
-      <img width="554" height="103" src="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color.png" class="attachment-header-logo size-header-logo" alt="" srcset="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color.png 1108w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-300x56.png 300w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-768x143.png 768w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-1024x190.png 1024w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-color-425x80.png 425w" sizes="(max-width: 554px) 100vw, 554px" />    	<h1>Voting</h1>      
-                
-                          </div>
-  </div>
-</header>
-
-    <div class="content-sections">
+<!--[if lte IE 9]>
+<script src="//d30itml3t0pwpf.cloudfront.net/assets/ie_fixes-18110ad2236e5b159951cae764c7a6a806ae17dec30c73d7fd99be3e32ef971d.js"></script>
+<![endif]-->
+<script>
+  head = document.head || document.getElementsByTagName( "head" )[0] || document.documentElement;
+  base = head.getElementsByTagName("base")[0]
+  baseHref = base.href.replace(/\/$/, '')
+  locationHref = window.location.href.replace(/\/$/, '')
   
-  <section class="content wishpond">
-    <div class="container" style="padding-top:25px;">      
-      <!-- Wishpond embed code -->
-      <script type="text/javascript">
-      (function(d, s, id) {
-        window.Wishpond = window.Wishpond || {};
-        Wishpond.merchantId = '1358316';
-        Wishpond.writeKey = '0b43c09d0544';
-        var js, wpjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//cdn.wishpond.net/connect.js";
-        wpjs.parentNode.insertBefore(js, wpjs);
-      }(document, 'script', 'wishpond-connect'));
-      </script>
-      <div class="wishpond-campaign" data-wishpond-id="2282968" data-wishpond-href="https://www.wishpond.com/lp/2282968/"></div>      
-    </div>
-  </section>
-  
-</div>
-<section class="content bottom-image">
-  <div class="container">
-    <img src="http://cultivatingchange.org/wp-content/themes/hive/assets/img/farm.png" alt="farm">
-  </div>
-</section>
-    </main>
+  if(locationHref.indexOf(baseHref) < 0 &&
+    locationHref.toLowerCase().indexOf(baseHref) >= 0) {
+    base.href = locationHref.substr(0, baseHref.length) + "/"
+  }
+</script>
+</head>
+<body class='landing-page-body pages  show wp_body' data-app-id='1432768656951037' data-facebook-app-id='1432768656951037' data-facebook-channel-url='//www.wishpond.com/fb_channel.html' data-host='https://www.wishpond.com' data-locale='en_US' data-merge-tags-plugin-url='/central/merge_tags' data-merge-tags-v2-plugin-url='/central/merge_tags_v2' data-social-campaign-id='2282968' data-social-campaign-is-popup='false' data-social-campaign-url='http://cultivatingchange.org/vote'>
+<div class='social_campaign' ng-view></div>
 
-  
-    <footer id="site-footer">
-      <div class="container">
+<div id='fb-root'></div>
+<script>
+  FileAPI = {
+    jsPath: '/',
+    staticPath: '/'
+  }
+</script>
+<script>
+  window.landingPage = true
+</script>
+<script type="text/javascript">
+(function(d, s, id) {
+  window.Wishpond = window.Wishpond || {};
+  Wishpond.socialCampaignId = '2282968';
+  Wishpond.campaignType = 'vote';
+  Wishpond.onWhiteLabelPlan = 'true';
+  Wishpond.poweredByLinkEnabled = 'false';
+  Wishpond.poweredByDestination = 'https://www.wishpond.com/vote-contest';
+  Wishpond.merchantId = '1358316';
+  Wishpond.writeKey = '0b43c09d0544';
+  var js, wpjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//cdn.wishpond.net/connect.js";
+  wpjs.parentNode.insertBefore(js, wpjs);
+}(document, 'script', 'wishpond-connect'));
+</script>
 
-        <div class="cols cols-2">
-          <div class="col">
-            <a class="site-logo" href="http://cultivatingchange.org/">
-              <img width="425" height="80" src="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-425x80.png" class="attachment-footer-logo size-footer-logo" alt="" srcset="http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-425x80.png 425w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-300x56.png 300w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white-768x143.png 768w, http://cultivatingchange.org/wp-content/uploads/2017/09/cc-logo-white.png 848w" sizes="(max-width: 425px) 100vw, 425px" />            </a>
-          </div>
-          <div class="col">
-                          <div class="blocks">
-                                <div class="block">
-                                    <ul class="social-links icons"><span>Follow Us for Updates:</span><li><a href="https://www.facebook.com/GreenerFieldsTogether/" target="_blank"><i class="icon-facebook"></i></a></li><li><a href="https://twitter.com/GFT2day" target="_blank"><i class="icon-twitter"></i></a></li><li><a href="https://www.instagram.com/greenerfieldstogether/" target="_blank"><i class="icon-instagram"></i></a></li></ul>                </div>
-                                <div class="block">
-                                    <nav class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-283"><a href="http://cultivatingchange.org/">Home</a></li>
-<li id="menu-item-280" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-280"><a href="http://cultivatingchange.org/about/">About</a></li>
-<li id="menu-item-279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-279"><a href="http://cultivatingchange.org/rules/">Rules</a></li>
-<li id="menu-item-278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-278"><a href="http://cultivatingchange.org/past-winners/">Past Winners</a></li>
-<li id="menu-item-282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-282"><a href="http://cultivatingchange.org/contact-us/">Contact Us</a></li>
-<li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-277"><a href="http://cultivatingchange.org/eligibility/">Eligibility</a></li>
-</ul></nav>                </div>
-                              </div>
-                      </div><!-- .block -->
-        </div><!-- .blocks -->
+<script>
+  function trackView() {
+    if (Wishpond.Tracker) {
+      Wishpond.Tracker.track('viewed_campaign', {
+        value: Wishpond.socialCampaignId,
+        page_title: document.title,
+        referrer: document.referrer
+      });
+    }
+    else {
+      setTimeout(trackView, 100);
+    }
+  }
+  trackView()
+</script>
+<script src="//d30itml3t0pwpf.cloudfront.net/assets/pages/v1/templates/library/pages/submission-entry-v1-a627056bfb6a8d12d54bccf225feffb28018bb6db63f71efcbdbd03d3a6eadc2.js"></script>
+<script src="//cdn.jsdelivr.net/jquery/1.10.2/jquery-1.10.2.min.js"></script>
 
-      </div>
-    </footer>
+<script src="//d30itml3t0pwpf.cloudfront.net/assets/pages_v1_vendor-e258673756c72265b2ef4b54e15a13ca43bc255673e82107cc15863ad070b66e.js"></script>
+<script src="//d30itml3t0pwpf.cloudfront.net/assets/pages_v1-c97ed1fde92af0e49be8c488b3fd645afef20476d5eb73175cc056dc88a18a47.js"></script>
+<script src="//js.honeybadger.io/v0.4/honeybadger.min.js"></script><script>
+//<![CDATA[
+Honeybadger.configure({"environment":"production_pages_js","api_key":"1167d87eb8b1f986ff3d8cd28766b434","ssl":true,"onerror":false});
+//]]>
+</script>
+<script>
+//<![CDATA[
+Honeybadger.setContext({"social_campaign_id":2282968});
+//]]>
+</script>
+<script src="//www.wishpond.com/javascripts/i18n/ng/en.js"></script>
+<script>
+  I18n.defaultLocale = "en";
+  I18n.fallbacks = true;
+  I18n.locale = "en";
+</script>
 
-  
-</div><!-- #page -->
-
-<script type='text/javascript' src='http://cultivatingchange.org/wp-content/themes/hive/assets/build/scripts.js?ver=20171227'></script>
-<script type='text/javascript' src='http://cultivatingchange.org/wp-includes/js/wp-embed.min.js?ver=4.8.4'></script>
-
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-17899204-1', {'name': 'Wishpond'});
+          </script>
 
 </body>
 </html>

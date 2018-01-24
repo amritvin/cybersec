@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
     //printf("connection establishedn");
-    //nonblock(sockfd);    //uncomment this line if we want to make the socket non-block
+    nonblock(sockfd);    //uncomment this line if we want to make the socket non-block
     for (i = 0; i < 5; ++i) {
         //printf("Please enter the message: ");
         bzero(buffer,BUFLEN);
