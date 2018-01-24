@@ -1,0 +1,2 @@
+netcat_part1: netcat_part1.c
+     gcc -o netcat netcat_part.c 
