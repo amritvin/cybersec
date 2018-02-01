@@ -3,6 +3,7 @@ int main()
 {
   char mybuff[1025],c;
   int i=0;
+  fseek(fp, 0, SEEK_END);
   while((c=getchar()) &&(c!='\n'))
     {
       printf("%c",c);

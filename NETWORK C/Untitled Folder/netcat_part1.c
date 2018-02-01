@@ -17,24 +17,24 @@ int main(int argc, char *argv[])
     struct sockaddr_in serv_addr;
 
     //if(argc != 7)
-    {
+  /*  {
         printf("\n Usage: %s <ip of server> \n",argv[0]);
       //  return 1;
-    }
+    }*/
     memset(recvBuff, '0',sizeof(recvBuff));
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     memset(&serv_addr, '0', sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    if(!(strcmp(argv[1],"-n")==0))
+    //if(!(strcmp(argv[1],"-n")==0))
     {
-      serv_addr.sin_port = htons(9090);
+  //    serv_addr.sin_port = htons(9090);
     }
-    else{
+    //else{
       serv_addr.sin_port = htons(atoi(argv[2]));
-    }
+    //}
     inet_pton(AF_INET, argv[3], &serv_addr.sin_addr);
     connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    void filesend(int i)
+  /*  void filesend(int i)
     {
       FILE *f;
       char c;
@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
     {
       filesend(0);
     }
-
-    if(!(strcmp(argv[1],"-p")))
+*/
+    //f(!(strcmp(argv[1],"-p")))
     {
       fgets(mybuff, 100, stdin);
       write(sockfd, mybuff, strlen(mybuff));
@@ -77,11 +77,11 @@ int main(int argc, char *argv[])
         printf("\n Read error \n");
       }
     }
-    if(!(strcmp(argv[1],"-o")))
+  /*  if(!(strcmp(argv[1],"-o")))
     {
       filesend(1);
         printf("helo");
     }
-
+*/
     return (0);
 }

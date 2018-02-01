@@ -54,16 +54,7 @@ int main(int argc, char *argv[])
             {
                 printf("\n Error : Fputs error\n");
             }
-            while(fgets(mybuff, 100, stdin)>0)
-            {
-            write(connfd, mybuff, strlen(mybuff));
-
-            }
-        }
-        while(fgets(mybuff, 100, stdin)>0)
-        {
-        write(connfd, mybuff, strlen(mybuff));
-
+          
         }
 
 

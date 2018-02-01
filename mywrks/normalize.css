@@ -1,0 +1,139 @@
+body {
+  background-color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 3em auto 3em auto;
+    min-width: 1in;
+    max-width: 6in;
+}
+
+.chessboard .row {
+  margin: 0; padding: 0;
+  position: relative;
+  clear: both;
+}
+
+.chessboard .row::before,
+.chessboard .row::after {
+  font-size: 300%;
+  position: absolute;
+}
+
+.chessboard .row::after {
+  left: 103%;
+}
+
+.chessboard .row::before {
+  right: 103%;
+}
+
+.chessboard .rank-8::before, .chessboard .rank-8::after {
+  content: '8';
+}
+
+.chessboard .rank-7::before, .chessboard .rank-7::after {
+  content: '7';
+}
+
+.chessboard .rank-6::before, .chessboard .rank-6::after {
+  content: '6';
+}
+
+.chessboard .rank-5::before, .chessboard .rank-5::after {
+  content: '5';
+}
+
+.chessboard .rank-4::before, .chessboard .rank-4::after {
+  content: '4';
+}
+
+.chessboard .rank-3::before, .chessboard .rank-3::after {
+  content: '3';
+}
+
+.chessboard .rank-2::before, .chessboard .rank-2::after {
+  content: '2';
+}
+
+.chessboard .rank-1::before, .chessboard .rank-1::after {
+  content: '1';
+}
+
+.chessboard .square {
+    background-color: grey;
+    width: 12.5%;
+    padding-bottom: 12.5%;
+    display: inline-block;
+    float: left;
+}
+
+.chessboard .row:nth-child(even) .square:nth-child(even) {
+    background-color: grey;
+}
+
+.chessboard .row:nth-child(even) .square:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.chessboard .square:nth-child(even) {
+    background-color: lightgrey;
+}
+
+.chessboard .legend {
+  display: inline-block;
+  width: 12.5%;
+  text-align: center;
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-size: 300%;
+}
+
+nav {
+  text-align: center;
+}
+
+nav button {
+  font-size: 5ex;
+  background-color: grey;
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 20%;
+}
+
+.chessboard .row .white::before, .chessboard .row .black::before {
+  font-size: 300%;
+  text-align: center;
+  position: absolute;
+  width: 12.5%;
+  line-height: 1.2;
+}
+
+.chessboard .row .black.pawn::before, .white.pawn::before {
+  content: '\265f';
+}
+
+.chessboard .row .black.knight::before, .white.knight::before {
+  content: '\265e';
+}
+
+.chessboard .row .black.rook::before, .white.rook::before {
+  content: '\265c';
+}
+
+.chessboard .row .black.queen::before, .white.queen::before {
+  content: '\265b';
+}
+
+.chessboard .row .black.king::before, .white.king::before {
+  content: '\265a';
+}
+
+.chessboard .row .black.bishop::before, .white.bishop::before {
+  content: '\265d';
+}
+
+.chessboard .row .white {
+  color: white;
+}

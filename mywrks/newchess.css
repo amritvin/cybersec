@@ -1,0 +1,19 @@
+#chessboard {
+    border: 1px solid black;
+}
+
+#chessboard td {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30px;
+
+    /* next two lines hide the text, in case you want to use images instead */
+    /* text-indent: -100%; */
+    /* overflow: hidden; */
+}
+
+#chessboard tr:nth-child(2n) > td:nth-child(2n+1), #chessboard tr:nth-child(2n+1) > td:nth-child(2n) {
+    background-color: silver;
+}

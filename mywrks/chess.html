@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chessboard using Pure CSS and HTML</title>
+<style type="text/css">
+.chessboard {
+    width: 640px;
+    height: 640px;
+    margin: 20px;
+    border: 25px solid #333;
+    position: absolute;
+}
+.black {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+      font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+
+}
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+</style>
+</head>
+<body>
+<div id="mychess" class="chessboard">
+<!-- 1st -->
+<div class="white">&#9820;</div>
+<div class="black">&#9822;</div>
+<div class="white">&#9821;</div>
+<div class="black">&#9819;</div>
+<div class="white">&#9818;</div>
+<div class="black">&#9821;</div>
+<div class="white">&#9822;</div>
+<div class="black">&#9820;</div>
+<!-- 2nd -->
+<div class="black">&#9821;</div>
+<div class="white">&#9821;</div>
+<div class="black">&#9821;</div>
+<div class="white">&#9821;</div>
+<div class="black">&#9821;</div>
+<div class="white">&#9821;</div>
+<div class="black">&#9821;</div>
+<div class="white">&#9821;</div>
+<!-- 3th -->
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<!-- 4st -->
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<!-- 5th -->
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<!-- 6th -->
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<div class="black"></div>
+<div class="white"></div>
+<!-- 7th -->
+<div class="white">&#9817;</div>
+<div class="black">&#9817;</div>
+<div class="white">&#9817;</div>
+<div class="black">&#9817;</div>
+<div class="white">&#9817;</div>
+<div class="black">&#9817;</div>
+<div class="white">&#9817;</div>
+<div class="black">&#9817;</div>
+<!-- 8th -->
+<div class="black">&#9814;</div>
+<div class="white">&#9816;</div>
+<div class="black">&#9815;</div>
+<div class="white">&#9813;</div>
+<div class="black">&#9812;</div>
+<div class="white">&#9815;</div>
+<div class="black">&#9816;</div>
+<div class="white">&#9814;</div>
+</div>
+<div>
+  <script>
+  //Make the DIV element draggagle:
+  dragElement(document.getElementById(("mychess")));
+
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      /* if present, the header is where you move the DIV from:*/
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      /* otherwise, move the DIV from anywhere inside the DIV:*/
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+  </script>
+</div>
+</body>
+</html>
