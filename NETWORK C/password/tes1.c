@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+<<<<<<< HEAD
  int split(char * s1,char * symbol,char * s[]);
  void fileop();
  int main()
@@ -56,6 +57,21 @@ void fileop(char fname1[],char fname2[])
 
  int split(char *s1,char * symbol,char * s[])
  {
+=======
+ void split(char * s1,char * symbol,char * s[]);
+
+ int main(){
+   char *k[100];
+   char * d= ":";
+   split("plg344:$1$GC$bLGQXmAa7pjS7TkkHvHel.:15434::::::",d,k);
+   printf("%s\n",*k);
+
+   return 0;
+ }
+
+ void split(char *s1,char * symbol,char * s[]){
+
+>>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
   char str[1000];
   strcpy(str,s1);
   char *token = strtok(str, symbol);
@@ -66,5 +82,9 @@ void fileop(char fname1[],char fname2[])
       s[++i]=token;
       token = strtok(NULL, symbol);
   }
+<<<<<<< HEAD
  return i;
+=======
+
+>>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
  }
