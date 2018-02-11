@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-
-<<<<<<< HEAD
  int split(char * s1,char * symbol,char * s[]);
  void fileop();
  int main()
@@ -22,18 +20,21 @@ void fileop(char fname1[],char fname2[])
   char mem1[100];
 
   char line[100];
+  strcpy(line,"");
 
   char * d= ":";
   FILE *f1,*f2,*f3;
   int i=10;
   f1 = fopen(fname1,"r");
   f2 = fopen(fname2,"r");
-  f3=fopen("passwrd.txt","w");
+  f3=fopen("passwordfile.txt","w");
   while(fgets(mem,100,f1)&&(fgets(mem1,100,f2)))
   {
   in=split(mem,d,k);
   //printf("%s\n",*(k+1));
+  
   char temp[1000];
+  strcpy(temp,"");
   strcpy(temp,*(k+1));
   //printf("%s\n",temp);
   in1=split(mem1,d,k1);
@@ -56,22 +57,7 @@ void fileop(char fname1[],char fname2[])
 
 
  int split(char *s1,char * symbol,char * s[])
- {
-=======
- void split(char * s1,char * symbol,char * s[]);
-
- int main(){
-   char *k[100];
-   char * d= ":";
-   split("plg344:$1$GC$bLGQXmAa7pjS7TkkHvHel.:15434::::::",d,k);
-   printf("%s\n",*k);
-
-   return 0;
- }
-
- void split(char *s1,char * symbol,char * s[]){
-
->>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
+{
   char str[1000];
   strcpy(str,s1);
   char *token = strtok(str, symbol);
@@ -82,9 +68,6 @@ void fileop(char fname1[],char fname2[])
       s[++i]=token;
       token = strtok(NULL, symbol);
   }
-<<<<<<< HEAD
- return i;
-=======
 
->>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
+ return i;
  }

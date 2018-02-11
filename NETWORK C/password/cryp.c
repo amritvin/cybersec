@@ -18,8 +18,8 @@ int main()
   char lin[100];
   char lin2[100];
   int in,y=1;
-  f1 = fopen("passwrd.txt","r");
-  f3=fopen("crackedpass.txt","w");
+  f1 = fopen("passwordfile.txt","r");
+  f3=fopen("allcrackedpasswords.txt","w");
   while(fgets(data,100,f1))
     {y=1;
     in=split(data,d,k);
