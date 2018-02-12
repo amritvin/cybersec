@@ -1,0 +1,236 @@
+<html>
+<body>
+<style>
+.container {
+  max-width: 800px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 45px;
+}
+
+.screen {
+  padding: 15px 10px;
+}
+
+.message__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  position: relative;
+  
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.message__item {
+  max-width: 50%;
+  clear: both;
+}
+
+.message__item--bot {
+  float: left;
+  
+  &:first-of-type .message {
+    border-top-left-radius: 20px;
+  }
+  
+  &:last-of-type .message {
+    border-bottom-left-radius: 20px;
+  }
+}
+
+.message__item--user {
+  float: right;
+  text-align: right;
+  
+  &:first-of-type .message {
+    border-top-right-radius: 20px;
+  }
+  
+  &:last-of-type .message {
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.message {
+  padding: 8px 15px;
+  margin-top: 2px;
+  display: inline-block;
+  text-align: left;
+}
+
+.message--bot {
+  background-color: #eee;
+  border-radius: 3px 20px 20px 3px;
+  margin-left: 35px;
+}
+
+.message--user {
+  background-color: #0baaff;
+  color: #fff;
+  border-radius: 20px 3px 3px 20px;
+}
+
+.bot__image {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  border-radius: 20px;
+}
+
+.answer {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+
+.answer__button {
+  background-color: #0baaff;
+  border-radius: 20px;
+  color: #fff;
+  padding: 8px 15px;
+  margin-top: 2px;
+  display: inline-block;
+  cursor: pointer;
+}
+</style>
+
+
+<div class="container">
+  <div class="screen">
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">hi</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">heyy</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">aaww</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Lorem ipsum dolor sit amet consectetur adispicing elit lorem ipsum dolor sit amet</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Bot falando aqui</span>
+      </div>
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Parece que funcionou</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Olá</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Never ending circles</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Lorem ipsum dolor sit amet consectetur adispicing elit lorem ipsum dolor sit amet</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Bot falando aqui</span>
+      </div>
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Parece que funcionou</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Olá</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Never ending circles</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Lorem ipsum dolor sit amet consectetur adispicing elit lorem ipsum dolor sit amet</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Bot falando aqui</span>
+      </div>
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Parece que funcionou</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Olá</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <div class="message__item message__item--user">
+        <span class="message message--user">Olá mundo!</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Never ending circles</span>
+      </div>
+      <div class="message__item message__item--user">
+        <span class="message message--user">Lorem ipsum dolor sit amet consectetur adispicing elit lorem ipsum dolor sit amet</span>
+      </div>
+    </div>
+    <div class="message__list">
+      <img class="bot__image" src="http://staticpopopics.popopics.com/img/fb_user.jpg">
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Bot falando aqui</span>
+      </div>
+      <div class="message__item message__item--bot">
+        <span class="message message--bot">Parece que funcionou</span>
+      </div>
+    </div>
+  </div>
+  <div class="answer">
+    <div class="answer__button">What are you most curious about on the web?</div>
+    <div class="answer__button">Enough, take me out of here</div>
+  </div>
+</div>
+</body>
+</html>

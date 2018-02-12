@@ -1,21 +1,31 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-<<<<<<< HEAD
  int split(char * s1,char * symbol,char * s[]);
- void fileop();
- int main()
+ int fileop();
+ int main(int argc,char *argv[])
  {
-   int in;
+   int in,c=0;
    char *k[100];
    char * d= ":";
-   //in=split("plg344:$1$GC$bLGQXmAa7pjS7TkkHvHel.:15434::::::",d,k);
-   fileop("training-shadow.txt","training-passwd.txt");
+
+   if(argc<3)
+   {
+     printf("\nusage: ./unshadow [<shadowfile> <passwordfile>]\n\teg:- training-shadow.txt,training-passwd.txt\n");
+     exit(0);
+   }
+   //fileop("training-shadow.txt","training-passwd.txt");
+   c=fileop(argv[1],argv[2]); // for file opratrions & unshadow
+   if (c)
+   printf("\n Created unshadow file on passwordfile.txt\n No.of lines :%d\n",c);
+   else
+   printf("\n! Some unexpected error occured check the file inputs to the program \n");
    return 0;
  }
-void fileop(char fname1[],char fname2[])
+int fileop(char fname1[],char fname2[])
 {
-  int in,in1;
+  int in,in1,count=0;
   char *k[100];
   char *k1[100];
   char mem[100];
@@ -28,16 +38,13 @@ void fileop(char fname1[],char fname2[])
   int i=10;
   f1 = fopen(fname1,"r");
   f2 = fopen(fname2,"r");
-  f3=fopen("passwrd.txt","w");
+  f3=fopen("passwordfile.txt","w");
   while(fgets(mem,100,f1)&&(fgets(mem1,100,f2)))
-  {
+  {count++;
   in=split(mem,d,k);
-  //printf("%s\n",*(k+1));
   char temp[1000];
   strcpy(temp,*(k+1));
-  //printf("%s\n",temp);
   in1=split(mem1,d,k1);
-  //printf("%s\n",*(k1));
   strcpy(line,*k1);
   strcat(line,":");
   strcat(line,temp);
@@ -52,39 +59,23 @@ void fileop(char fname1[],char fname2[])
   fputs("\n",f3);
 
   }
+  return count;
 }
 
 
  int split(char *s1,char * symbol,char * s[])
  {
-=======
- void split(char * s1,char * symbol,char * s[]);
 
- int main(){
-   char *k[100];
-   char * d= ":";
-   split("plg344:$1$GC$bLGQXmAa7pjS7TkkHvHel.:15434::::::",d,k);
-   printf("%s\n",*k);
-
-   return 0;
- }
-
- void split(char *s1,char * symbol,char * s[]){
-
->>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
   char str[1000];
   strcpy(str,s1);
   char *token = strtok(str, symbol);
   int i=-1;
   while (token != NULL)
   {
-      //printf("%s\n", token);
       s[++i]=token;
       token = strtok(NULL, symbol);
   }
-<<<<<<< HEAD
- return i;
-=======
 
->>>>>>> d7a2fc4f58b6004718a25f46d27d4d003b0f1c14
+ return i;
+
  }
